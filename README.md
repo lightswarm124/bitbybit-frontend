@@ -2,7 +2,6 @@ This is the frontend for the cryptocurrency BitByBit's website. This web applica
 
 ## Built With
 * React.js
-* Gatsby.js
 * Ethers.js
 * Emotion 
 
