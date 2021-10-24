@@ -1,5 +1,23 @@
 import React, { useState, useEffect } from "react";
 import getBlockchain from "./ethereum.js";
+import styled from "@emotion/styled";
+import Navbar from "../src/components/Navbar/Navbar";
+import Hero from "../src/components/Hero";
+import About from "../src/components/About";
+
+const pageStyles = {
+  backgroundColor: "black",
+  margin: 0,
+  maxWidth: "100%",
+  minHeight: "100wh",
+  color: "white",
+  fontFamily: "Roboto, sans-serif",
+};
+
+const PageWrapper = styled("div")`
+  max-width: 750px;
+  margin: 0 auto;
+`;
 
 function App() {
   const [simpleStorage, setSimpleStorage] = useState(undefined);
@@ -29,28 +47,36 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-sm-6">
-          <h2>Data:</h2>
-          <p>{data.toString()}</p>
-        </div>
+    <main style={pageStyles}>
+      <PageWrapper>
+        <title>BitByBit</title>
+        <Navbar />
+        <Hero />
+        <About />
+      </PageWrapper>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-6">
+            <h2>Data:</h2>
+            <p>{data.toString()}</p>
+          </div>
 
-        <div className="col-sm-6">
-          <h2>Purchase BitByBit tokens</h2>
-          <form className="form-inline" onSubmit={(e) => updateData(e)}>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Quantity to purchase"
-            />
-            <button type="submit" className="btn btn-primary">
-              Purchase
-            </button>
-          </form>
+          <div className="col-sm-6">
+            <h2>Purchase BitByBit tokens</h2>
+            <form className="form-inline" onSubmit={(e) => updateData(e)}>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Quantity to purchase"
+              />
+              <button type="submit" className="btn btn-primary">
+                Purchase
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

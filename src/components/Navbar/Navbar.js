@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import NavbarLinks from "./NavbarLinks";
 import WalletButton from "./WalletButton";
-import Logo from "./Logo";
+import Logo from "../../images/bbbLogo.png";
 
 const Navigation = styled.nav`
   height: 10vh;
   display: flex;
   position: relative;
   justify-content: space-between;
+  align-items: center;
   text-transform: uppercase;
   border-bottom: 2px solid #33333320;
-  margin: 0 auto;
-  padding: 0 5vw;
   z-index: 2;
   align-self: center;
   @media (max-width: 768px) {
@@ -38,7 +37,7 @@ const Toggle = styled.div`
 const Navbox = styled.div`
   display: flex;
   height: 100%;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   @media (max-width: 768px) {
     flex-direction: column;
@@ -80,12 +79,18 @@ const Hamburger = styled.div`
     top: 10px;
   }
 `;
+
+const LogoImage = styled.img`
+  width: auto;
+  height: 2rem;
+`;
+
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
     <Navigation>
-      <Logo />
+      <LogoImage src={Logo} alt="" />
       <Toggle
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}
@@ -101,7 +106,7 @@ const Navbar = () => {
           <NavbarLinks />
         </Navbox>
       )}
-      <WalletButton />
+      {/* <WalletButton /> */}
     </Navigation>
   );
 };

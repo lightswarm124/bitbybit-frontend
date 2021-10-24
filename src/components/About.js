@@ -1,12 +1,16 @@
 import styled from "@emotion/styled";
 import React from "react";
+import BlockHeading from "./BlockHeading";
 
-const AboutSection = styled("div")``;
+const AboutSection = styled("div")`
+  background: white;
+  color: black;
+`;
 
 const About = () => {
   return (
     <AboutSection>
-      <h3>How it Works</h3>
+      <BlockHeading title="How it works" />
       <p>
         Bitbybit is a proof-of-stake cryptocurrency that donates 85% of its
         liquidation to charity. It is one of the first non-profit organizations

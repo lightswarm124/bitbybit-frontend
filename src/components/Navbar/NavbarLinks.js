@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Link } from "gatsby";
 
-const NavItem = styled(Link)`
+const NavItem = styled("a")`
   text-decoration: none;
   color: white;
   display: inline-block;

@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import Img from "gatsby-image";
-import { useStaticQuery, graphql } from "gatsby";
+import Globe from "../images/bbbGlobe.png";
 
 const HeroWrapper = styled("div")`
   display: flex;
@@ -29,19 +28,6 @@ const HeroImageWrapper = styled("div")`
 `;
 
 const Hero = () => {
-  //get hero image
-  const data = useStaticQuery(graphql`
-    query {
-      file(name: { eq: "bbbGlobe" }, extension: { eq: "png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1150, pngQuality: 80) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <HeroWrapper>
       <div>
@@ -57,7 +43,7 @@ const Hero = () => {
         <button>Buy now</button>
       </div>
       <HeroImageWrapper>
-        <Img fluid={data.file.childImageSharp.fluid} alt="Globe animation" />
+        <img src={Globe} alt="Globe animation" />
       </HeroImageWrapper>
     </HeroWrapper>
   );

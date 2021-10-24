@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Img from "gatsby-image";
-import { Link, useStaticQuery, graphql } from "gatsby";
 
 const LogoWrap = styled.div`
   margin: auto 0;
@@ -11,21 +9,21 @@ const LogoWrap = styled.div`
   }
 `;
 const Logo = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(name: { eq: "bbbLogo" }, extension: { eq: "png" }) {
-        childImageSharp {
-          fluid(maxWidth: 150, pngQuality: 80) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
+  //   const data = useStaticQuery(graphql`
+  //     query {
+  //       file(name: { eq: "bbbLogo" }, extension: { eq: "png" }) {
+  //         childImageSharp {
+  //           fluid(maxWidth: 150, pngQuality: 80) {
+  //             ...GatsbyImageSharpFluid
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `);
 
   return (
-    <LogoWrap as={Link} to="/">
-      <Img fluid={data.file.childImageSharp.fluid} alt="logo" />
+    <LogoWrap>
+      {/* <Img fluid={data.file.childImageSharp.fluid} alt="logo" /> */}
     </LogoWrap>
   );
 };
