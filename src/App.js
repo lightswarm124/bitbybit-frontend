@@ -14,11 +14,6 @@ const pageStyles = {
   fontFamily: "Roboto, sans-serif",
 };
 
-const PageWrapper = styled("div")`
-  max-width: 750px;
-  margin: 0 auto;
-`;
-
 function App() {
   const [simpleStorage, setSimpleStorage] = useState(undefined);
   const [data, setData] = useState(undefined);
@@ -48,12 +43,10 @@ function App() {
 
   return (
     <main style={pageStyles}>
-      <PageWrapper>
-        <title>BitByBit</title>
-        <Navbar />
-        <Hero />
-        <About />
-      </PageWrapper>
+      <title>BitByBit</title>
+      <Navbar />
+      <Hero />
+      <About />
       <div className="container">
         <div className="row">
           <div className="col-sm-6">

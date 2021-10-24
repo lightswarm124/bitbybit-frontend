@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import NavbarLinks from "./NavbarLinks";
 import WalletButton from "./WalletButton";
 import Logo from "../../images/bbbLogo.png";
+import ContentWrapper from "../ContentWrapper";
 
 const Navigation = styled.nav`
   height: 10vh;
@@ -90,23 +91,25 @@ const Navbar = () => {
 
   return (
     <Navigation>
-      <LogoImage src={Logo} alt="" />
-      <Toggle
-        navbarOpen={navbarOpen}
-        onClick={() => setNavbarOpen(!navbarOpen)}
-      >
-        {navbarOpen ? <Hamburger open /> : <Hamburger />}
-      </Toggle>
-      {navbarOpen ? (
-        <Navbox>
-          <NavbarLinks />
-        </Navbox>
-      ) : (
-        <Navbox open>
-          <NavbarLinks />
-        </Navbox>
-      )}
-      {/* <WalletButton /> */}
+      <ContentWrapper>
+        <LogoImage src={Logo} alt="" />
+        <Toggle
+          navbarOpen={navbarOpen}
+          onClick={() => setNavbarOpen(!navbarOpen)}
+        >
+          {navbarOpen ? <Hamburger open /> : <Hamburger />}
+        </Toggle>
+        {navbarOpen ? (
+          <Navbox>
+            <NavbarLinks />
+          </Navbox>
+        ) : (
+          <Navbox open>
+            <NavbarLinks />
+          </Navbox>
+        )}
+        {/* <WalletButton /> */}
+      </ContentWrapper>
     </Navigation>
   );
 };
