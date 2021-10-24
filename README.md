@@ -1,4 +1,4 @@
-This is the frontend for the cryptocurrency BitByBit. This web application serves as an informational site as well as allowing users to attach their Metamask wallet and purchase BBB tokens.
+This is the frontend for the cryptocurrency BitByBit's website. This web application serves as an informational site as well as allowing users to attach their Metamask wallet and purchase BBB tokens.
 
 ## Built With
 * React.js
