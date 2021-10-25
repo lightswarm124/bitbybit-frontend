@@ -7,7 +7,6 @@ import ContentWrapper from "../ContentWrapper";
 
 const Navigation = styled.nav`
   height: 10vh;
-  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -28,7 +27,6 @@ const Navigation = styled.nav`
 
 const NavWrapper = styled.div`
   height: 10vh;
-  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

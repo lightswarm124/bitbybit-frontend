@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Button from "../_ui/Button";
-import getBlockchain from "../../ethereum";
 
 const AlertButton = styled(Button)`
   border: 1px solid #ff734e;
@@ -16,7 +15,7 @@ const WalletButton = () => {
   return (
     <>
       {status === "disconnected" ? (
-        <AlertButton onClick={getBlockchain()}>Connect Wallet</AlertButton>
+        <AlertButton>Connect Wallet</AlertButton>
       ) : (
         <Button variant="primary">Disconnect</Button>
       )}
