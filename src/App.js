@@ -5,6 +5,7 @@ import Hero from "../src/components/Hero";
 import About from "../src/components/About";
 import Charity from "../src/components/Charity";
 import Roadmap from "./components/Roadmap.js";
+import Tokenomics from "./Tokenomics.js";
 
 const pageStyles = {
   backgroundColor: "black",
@@ -51,6 +52,7 @@ function App() {
       <About />
       <Charity />
       <Roadmap />
+      <Tokenomics />
       <div className="container">
         <div className="row">
           <div className="col-sm-6">
