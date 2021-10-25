@@ -38,7 +38,6 @@ const WalletButton = () => {
     return "Loading...";
   }
   const status = "disconnected";
-  console.log(readableBalance);
   return (
     <>
       {status === "disconnected" ? (
