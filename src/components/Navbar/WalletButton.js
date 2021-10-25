@@ -1,39 +1,26 @@
-// import React, { useState, useEffect } from "react";
-// import {
-//   BscConnector,
-//   UserRejectedRequestError,
-// } from "@binance-chain/bsc-connector";
-// import {
-//   ConnectionRejectedError,
-//   useWallet,
-//   UseWalletProvider,
-// } from "use-wallet";
-// import styled from "@emotion/styled";
+import React, { useState, useEffect } from "react";
+import styled from "@emotion/styled";
+import Button from "../_ui/Button";
 
-// const Button = styled("button")`
-//   padding-top: 0;
-//   border-radius: 12px;
-//   height: 3rem;
-//   border: 1px solid #ff734e;
-//   background-color: rgba(255, 115, 78, 0.2);
-//   color: #ff734e;
-//   transition: all 0.2s;
-// `;
+const AlertButton = styled(Button)`
+  border: 1px solid #ff734e;
+  background-color: rgba(255, 115, 78, 0.2);
+  color: #ff734e;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+`;
 
-// const WalletButton = () => {
-//   const { account, connect, reset, status } = useWallet();
-//   console.log("status: " + status);
-//   console.log("account" + account);
-//   return (
-//     <>
-//       {status === "disconnected" ? (
-//         <Button onClick={() => connect("bsc")}>Connect</Button>
-//       ) : (
-//         <Button onClick={() => reset()}>Disconnect</Button>
-//       )}
-//       {account && <p>Connected as {account}</p>}
-//     </>
-//   );
-// };
+const WalletButton = () => {
+  const status = "disconnected";
+  return (
+    <>
+      {status === "disconnected" ? (
+        <AlertButton>Connect Wallet</AlertButton>
+      ) : (
+        <Button variant="primary">Disconnect</Button>
+      )}
+    </>
+  );
+};
 
-// export default WalletButton;
+export default WalletButton;

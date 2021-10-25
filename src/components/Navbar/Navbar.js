@@ -7,8 +7,30 @@ import ContentWrapper from "../ContentWrapper";
 
 const Navigation = styled.nav`
   height: 10vh;
+  width: 100vw;
   display: flex;
-  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  border-bottom: 2px solid #33333320;
+  z-index: 2;
+  align-self: center;
+  @media (max-width: 768px) {
+    position: sticky;
+    height: 8vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+  }
+`;
+
+const NavWrapper = styled.div`
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
@@ -53,7 +75,7 @@ const Navbox = styled.div`
 `;
 
 const Hamburger = styled.div`
-  /* background-color: #111; */
+  background-color: white;
   width: 30px;
   height: 3px;
   transition: all 0.3s linear;
@@ -64,7 +86,7 @@ const Hamburger = styled.div`
   ::after {
     width: 30px;
     height: 3px;
-    /* background-color: #111; */
+    background-color: white;
     content: "";
     position: absolute;
     transition: all 0.3s linear;
@@ -92,23 +114,25 @@ const Navbar = () => {
   return (
     <Navigation>
       <ContentWrapper>
-        <LogoImage src={Logo} alt="" />
-        <Toggle
-          navbarOpen={navbarOpen}
-          onClick={() => setNavbarOpen(!navbarOpen)}
-        >
-          {navbarOpen ? <Hamburger open /> : <Hamburger />}
-        </Toggle>
-        {navbarOpen ? (
-          <Navbox>
-            <NavbarLinks />
-          </Navbox>
-        ) : (
-          <Navbox open>
-            <NavbarLinks />
-          </Navbox>
-        )}
-        {/* <WalletButton /> */}
+        <NavWrapper>
+          <LogoImage src={Logo} alt="" />
+          <Toggle
+            navbarOpen={navbarOpen}
+            onClick={() => setNavbarOpen(!navbarOpen)}
+          >
+            {navbarOpen ? <Hamburger open /> : <Hamburger />}
+          </Toggle>
+          {navbarOpen ? (
+            <Navbox>
+              <NavbarLinks />
+            </Navbox>
+          ) : (
+            <Navbox open>
+              <NavbarLinks />
+            </Navbox>
+          )}
+          <WalletButton />
+        </NavWrapper>
       </ContentWrapper>
     </Navigation>
   );

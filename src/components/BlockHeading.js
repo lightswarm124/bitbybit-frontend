@@ -4,7 +4,7 @@ import Block from "../images/bbbBlock.png";
 
 const HeadingWrapper = styled.div`
   width: 100%;
-  margin-left: 2.75rem;
+  margin: 0 auto;
 
   img {
     width: 3.5rem;
@@ -13,6 +13,8 @@ const HeadingWrapper = styled.div`
   h3 {
     margin-top: -1.2rem;
     margin-left: 2.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
   }
 `;
 

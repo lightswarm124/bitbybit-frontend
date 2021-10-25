@@ -2,16 +2,17 @@ import React from "react";
 import styled from "@emotion/styled";
 import Globe from "../images/bbbGlobe.png";
 import ContentWrapper from "./ContentWrapper";
+import Button from "../components/_ui/Button";
 
 const HeroWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 2rem 0;
 `;
 
 const TextWrapper = styled.div`
-  /* width: 60%; */
   flex: 1;
 
   h1 {
@@ -26,12 +27,19 @@ const TextWrapper = styled.div`
     font-weight: 400;
     font-size: 1.2rem;
   }
+
+  .buttons-wrapper {
+    margin-top: 2rem;
+    button {
+      margin-right: 2rem;
+    }
+  }
 `;
 
 const HeroImageWrapper = styled.div`
-  /* width: 40%; */
   flex: 1;
   img {
+    max-width: 400px;
     min-width: 200px;
   }
 `;
@@ -50,8 +58,10 @@ const Hero = () => {
             Bit
           </h1>
           <h2>Invest and donate to charity simultaneously.</h2>
-          <button>Buy now</button>
-          <button>Learn more</button>
+          <div className="buttons-wrapper">
+            <Button variant="primary">Buy now</Button>
+            <Button variant="secondary">Learn more</Button>
+          </div>
         </TextWrapper>
         <HeroImageWrapper>
           <img src={Globe} alt="Globe animation" />
