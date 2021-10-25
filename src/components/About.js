@@ -16,8 +16,9 @@ const AboutWrapper = styled.div`
   img {
     flex: 1;
     width: 50%;
+    height: 25vh;
     margin-left: 2rem;
-    margin-top: -2rem;
+    margin-top: 2rem;
   }
 `;
 

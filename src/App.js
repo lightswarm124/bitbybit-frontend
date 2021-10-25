@@ -3,6 +3,8 @@ import getBlockchain from "./ethereum.js";
 import Navbar from "../src/components/Navbar/Navbar";
 import Hero from "../src/components/Hero";
 import About from "../src/components/About";
+import Charity from "../src/components/Charity";
+import Roadmap from "./components/Roadmap.js";
 
 const pageStyles = {
   backgroundColor: "black",
@@ -47,6 +49,8 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Charity />
+      <Roadmap />
       <div className="container">
         <div className="row">
           <div className="col-sm-6">
