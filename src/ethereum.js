@@ -15,6 +15,7 @@ const getBlockchain = () =>
       );
       console.log("BNB Balance: " + ethers.utils.formatEther(balance._hex));
       const readableBalance = ethers.utils.formatEther(balance._hex);
+      console.log(readableBalance);
       const signer = provider.getSigner();
       const simpleStorage = new Contract(
         SimpleStorage.networks[networkId].address,
