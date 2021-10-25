@@ -35,6 +35,7 @@ function App() {
     await tx.wait();
     const newData = await simpleStorage.readData();
     setData(newData);
+    console.log(newData);
   };
 
   if (typeof simpleStorage === "undefined" || typeof data === "undefined") {
