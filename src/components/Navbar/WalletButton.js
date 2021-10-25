@@ -45,28 +45,6 @@ const WalletButton = () => {
       ) : (
         <Button variant="primary">Disconnect</Button>
       )}
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-6">
-            {/* <h2>Data:</h2>
-            <p>{data.toString()}</p> */}
-          </div>
-
-          <div className="col-sm-6">
-            <h2>Purchase BitByBit tokens</h2>
-            <form className="form-inline" onSubmit={(e) => updateData(e)}>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Quantity to purchase"
-              />
-              <button type="submit" className="btn btn-primary">
-                Purchase
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
     </>
   );
 };
