@@ -1,0 +1,22 @@
+.vertical-timeline-element-title {
+    font-size: 1.2rem;
+    color: #480EF2;
+}
+
+.vertical-timeline-element-icon {
+    box-shadow: 0 0 0 4px #ff2498, inset 0 2px 0 rgb(0 0 0 / 8%), 0 3px 0 4px rgb(0 0 0 / 5%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    margin: 0;
+    padding: 0.75rem 0;
+}
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.35rem 0;
+}
