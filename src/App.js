@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import getBlockchain from "./ethereum.js";
 import Navbar from "../src/components/Navbar/Navbar";
 import Hero from "../src/components/Hero";
@@ -19,29 +19,30 @@ const pageStyles = {
 
 function App() {
   const [simpleStorage, setSimpleStorage] = useState(undefined);
-  const [data, setData] = useState(undefined);
-  const [walletAddress, setWalletAddress] = useState(undefined);
+  console.log(simpleStorage);
+  // const [data, setData] = useState("");
+  // const [walletAddress, setWalletAddress] = useState(undefined);
 
   const integrateWallet = () => {
     const init = async () => {
       const { simpleStorage } = await getBlockchain();
-      console.log(simpleStorage);
       const data = await simpleStorage.readData();
+      console.log(data);
       setSimpleStorage(simpleStorage);
-      setData(data);
+      // setData(data);
     };
     init();
   };
 
-  const updateData = async (e) => {
-    e.preventDefault();
-    const data = e.target.elements[0].value;
-    const tx = await simpleStorage.updateData(data);
-    await tx.wait();
-    const newData = await simpleStorage.readData();
-    newData !== "undefined" && setData(newData);
-    console.log(newData);
-  };
+  // const updateData = async (e) => {
+  //   e.preventDefault();
+  //   const data = e.target.elements[0].value;
+  //   const tx = await simpleStorage.updateData(data);
+  //   await tx.wait();
+  //   const newData = await simpleStorage.readData();
+  //   newData !== "undefined" && setData(newData);
+  //   console.log(newData);
+  // };
 
   // if (typeof simpleStorage === "undefined" || typeof data === "undefined") {
   //   return "Loading...";
@@ -54,7 +55,7 @@ function App() {
         <div id="stars2"></div>
         <div id="stars3"></div>
         <title>BitByBit</title>
-        <Navbar walletAddress={walletAddress} onClickLogin={integrateWallet} />
+        <Navbar onClickLogin={integrateWallet} />
         <Hero />
         <About />
         <Charity />
