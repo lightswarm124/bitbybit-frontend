@@ -20,16 +20,18 @@ const pageStyles = {
 function App() {
   const [simpleStorage, setSimpleStorage] = useState(undefined);
   const [data, setData] = useState(undefined);
+  const [walletAddress, setWalletAddress] = useState(undefined);
 
-  useEffect(() => {
+  const integrateWallet = () => {
     const init = async () => {
       const { simpleStorage } = await getBlockchain();
+      console.log(simpleStorage);
       const data = await simpleStorage.readData();
       setSimpleStorage(simpleStorage);
       setData(data);
     };
     init();
-  }, []);
+  };
 
   const updateData = async (e) => {
     e.preventDefault();
@@ -37,13 +39,13 @@ function App() {
     const tx = await simpleStorage.updateData(data);
     await tx.wait();
     const newData = await simpleStorage.readData();
-    setData(newData);
+    newData !== "undefined" && setData(newData);
     console.log(newData);
   };
 
-  if (typeof simpleStorage === "undefined" || typeof data === "undefined") {
-    return "Loading...";
-  }
+  // if (typeof simpleStorage === "undefined" || typeof data === "undefined") {
+  //   return "Loading...";
+  // }
 
   return (
     <>
@@ -52,7 +54,7 @@ function App() {
         <div id="stars2"></div>
         <div id="stars3"></div>
         <title>BitByBit</title>
-        <Navbar />
+        <Navbar walletAddress={walletAddress} onClickLogin={integrateWallet} />
         <Hero />
         <About />
         <Charity />
@@ -60,7 +62,7 @@ function App() {
         <Tokenomics />
         <div id="stars2"></div>
         <div id="stars3"></div>
-        <div className="container">
+        {/* <div className="container">
           <div className="row">
             <div className="col-sm-6">
               <h2>Data:</h2>
@@ -81,7 +83,7 @@ function App() {
               </form>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
     </>
   );
