@@ -9,22 +9,33 @@ const CharitySection = styled("div")`
   color: white !important;
   padding: 2rem 0;
   color: black;
+  padding: 5rem 0;
 `;
 
 const CharityWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  img {
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+
+  .charity-text {
     flex: 1;
-    width: 50%;
-    height: 25vh;
+    margin-left: 3rem;
+  }
+
+  .charity-image {
+    flex: 1;
+    max-width: 50%;
+    flex: 1;
     margin-left: 2rem;
     margin-top: -2rem;
+    z-index: 9999;
   }
-`;
-
-const CharityText = styled.div`
-  flex-basis: 1;
+  img {
+    width: 100%;
+  }
 `;
 
 const Charity = () => {
@@ -33,7 +44,7 @@ const Charity = () => {
       <ContentWrapper>
         <BlockHeading title="Charity" />
         <CharityWrapper>
-          <CharityText>
+          <div className="charity-text">
             <p>We are currently partnered with United Way Worldwide.</p>
             <p>
               United Way advances the common good in communities across the
@@ -45,8 +56,10 @@ const Charity = () => {
               education, and financial stability of every person in every
               community.
             </p>
-          </CharityText>
-          <img src={unitedWay} alt="teacher helping student" />
+          </div>
+          <div className="charity-image">
+            <img src={unitedWay} alt="teacher helping student" />
+          </div>
         </CharityWrapper>
       </ContentWrapper>
     </CharitySection>

@@ -9,7 +9,6 @@ import Tokenomics from "./Tokenomics.js";
 import "./styles/stars.css";
 
 const pageStyles = {
-  backgroundColor: "black",
   margin: 0,
   maxWidth: "100%",
   minHeight: "100wh",

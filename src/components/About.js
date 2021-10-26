@@ -5,9 +5,10 @@ import ContentWrapper from "./ContentWrapper";
 import blocksIllustration from "../images/blocks-illustration.png";
 
 const AboutSection = styled("div")`
-  background: white;
+  z-index: 9999;
   padding: 2rem 0;
-  color: black;
+  background: #220969;
+  color: white;
   width: 100%;
 `;
 
