@@ -9,7 +9,7 @@ const HeroWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 2rem 0;
+  padding: 7rem 0;
 `;
 
 const TextWrapper = styled.div`
@@ -39,9 +39,12 @@ const TextWrapper = styled.div`
 const HeroImageWrapper = styled.div`
   z-index: 9999;
   flex: 1;
+  #earth {
+    margin: 0 auto;
+  }
   img {
     max-width: 400px;
-    min-width: 200px;
+    min-width: 220px;
   }
 `;
 
