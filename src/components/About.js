@@ -8,22 +8,32 @@ const AboutSection = styled("div")`
   background: white;
   padding: 2rem 0;
   color: black;
+  width: 100%;
 `;
 
 const AboutWrapper = styled.div`
+  z-index: 9999;
   display: flex;
-  flex-direction: row;
-  img {
-    flex: 1;
-    width: 50%;
-    height: 25vh;
-    margin-left: 2rem;
-    margin-top: 2rem;
-  }
-`;
+  margin-left: 3rem;
 
-const AboutText = styled.div`
-  flex-basis: 1;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    flex: 1;
+    max-width: 50%;
+    margin-left: 2rem;
+    margin-top: -2rem;
+    z-index: 9999;
+
+    img {
+      width: 100%;
+    }
+  }
+  .about-text {
+    flex: 1;
+  }
 `;
 
 const About = () => {
@@ -32,7 +42,7 @@ const About = () => {
       <ContentWrapper>
         <BlockHeading title="How it works" />
         <AboutWrapper>
-          <AboutText>
+          <div className="about-text">
             <p>
               Bitbybit is a proof-of-stake cryptocurrency that donates 85% of
               its liquidation to charity. It is one of the first non-profit
@@ -51,8 +61,10 @@ const About = () => {
               innovative financing mechanisms. Our goal is to provide charitable
               organizations across the world access to blockchain technology.
             </p>
-          </AboutText>
-          <img src={blocksIllustration} alt="people sitting on blocks" />
+          </div>
+          <div className="image-wrapper">
+            <img src={blocksIllustration} alt="people sitting on blocks" />
+          </div>
         </AboutWrapper>
       </ContentWrapper>
     </AboutSection>
