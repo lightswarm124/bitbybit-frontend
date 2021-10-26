@@ -6,11 +6,9 @@ import "react-vertical-timeline-component/style.min.css";
 import BlockHeading from "./BlockHeading";
 import ContentWrapper from "./ContentWrapper";
 import "../styles/roadmap.css";
-import { withTheme } from "@emotion/react";
 import Checkmark from "../images/checkmark.png";
 
 const Roadmap = () => {
-  const roadmapProgress = 1;
   return (
     <ContentWrapper>
       <BlockHeading title="Roadmap" />
