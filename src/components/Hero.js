@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Globe from "../images/bbbGlobe.png";
 import ContentWrapper from "./ContentWrapper";
 import Button from "../components/_ui/Button";
+import "../styles/globe.css";
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -37,6 +37,7 @@ const TextWrapper = styled.div`
 `;
 
 const HeroImageWrapper = styled.div`
+  z-index: 9999;
   flex: 1;
   img {
     max-width: 400px;
@@ -64,7 +65,7 @@ const Hero = () => {
           </div>
         </TextWrapper>
         <HeroImageWrapper>
-          <img src={Globe} alt="Globe animation" />
+          <div id="earth" />
         </HeroImageWrapper>
       </HeroWrapper>
     </ContentWrapper>

@@ -6,6 +6,7 @@ import About from "../src/components/About";
 import Charity from "../src/components/Charity";
 import Roadmap from "./components/Roadmap.js";
 import Tokenomics from "./Tokenomics.js";
+import "./styles/stars.css";
 
 const pageStyles = {
   backgroundColor: "black",
@@ -45,37 +46,44 @@ function App() {
   }
 
   return (
-    <main style={pageStyles}>
-      <title>BitByBit</title>
-      <Navbar />
-      <Hero />
-      <About />
-      <Charity />
-      <Roadmap />
-      <Tokenomics />
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-6">
-            <h2>Data:</h2>
-            <p>{data.toString()}</p>
-          </div>
+    <>
+      <main style={pageStyles}>
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <title>BitByBit</title>
+        <Navbar />
+        <Hero />
+        <About />
+        <Charity />
+        <Roadmap />
+        <Tokenomics />
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-6">
+              <h2>Data:</h2>
+              <p>{data.toString()}</p>
+            </div>
 
-          <div className="col-sm-6">
-            <h2>Purchase BitByBit tokens</h2>
-            <form className="form-inline" onSubmit={(e) => updateData(e)}>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Quantity to purchase"
-              />
-              <button type="submit" className="btn btn-primary">
-                Purchase
-              </button>
-            </form>
+            <div className="col-sm-6">
+              <h2>Purchase BitByBit tokens</h2>
+              <form className="form-inline" onSubmit={(e) => updateData(e)}>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Quantity to purchase"
+                />
+                <button type="submit" className="btn btn-primary">
+                  Purchase
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
 
