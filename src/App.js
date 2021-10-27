@@ -12,7 +12,7 @@ import "./styles/stars.css";
 const pageStyles = {
   margin: 0,
   maxWidth: "100%",
-  minHeight: "100wh",
+  minHeight: "100vh",
   color: "white",
   fontFamily: "Roboto, sans-serif",
   boxSize: "border-box",
@@ -20,17 +20,20 @@ const pageStyles = {
 
 function App() {
   const [simpleStorage, setSimpleStorage] = useState(undefined);
-  console.log(simpleStorage);
-  // const [data, setData] = useState("");
+  const [userWallet, setUserWallet] = useState(undefined);
+  const [data, setData] = useState("");
   // const [walletAddress, setWalletAddress] = useState(undefined);
+  console.log(simpleStorage);
+  console.log(data);
 
   const integrateWallet = () => {
     const init = async () => {
       const { simpleStorage } = await getBlockchain();
       const data = await simpleStorage.readData();
-      console.log(data);
       setSimpleStorage(simpleStorage);
-      // setData(data);
+      console.log(simpleStorage);
+      setData(data);
+      setUserWallet(simpleStorage.signer.provider.provider.selectedAddress);
     };
     init();
   };
@@ -56,7 +59,7 @@ function App() {
         <div id="stars2"></div>
         <div id="stars3"></div>
         <title>BitByBit</title>
-        <Navbar onClickLogin={integrateWallet} />
+        <Navbar wallet={userWallet} onClickLogin={integrateWallet} />
         <Hero />
         <About />
         <Charity />

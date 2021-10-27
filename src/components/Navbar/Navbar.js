@@ -114,11 +114,15 @@ const AlertButton = styled(Button)`
   font-size: 0.85rem;
 `;
 
-const Navbar = ({ onClickLogin }) => {
+const Navbar = ({ wallet, onClickLogin }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleClick = () => {
     onClickLogin();
   };
+  console.log("Wallet: " + wallet);
+  const abbreviatedWallet = `${wallet?.slice(0, 2)}...${wallet?.slice(
+    wallet.length - 5
+  )}`;
 
   return (
     <Navigation>
@@ -140,7 +144,11 @@ const Navbar = ({ onClickLogin }) => {
               <NavbarLinks />
             </Navbox>
           )}
-          <AlertButton onClick={handleClick}>Connect Wallet</AlertButton>
+          {wallet ? (
+            <Button variant="primary">{abbreviatedWallet}</Button>
+          ) : (
+            <AlertButton onClick={handleClick}>Connect Wallet</AlertButton>
+          )}
         </NavWrapper>
       </ContentWrapper>
     </Navigation>
