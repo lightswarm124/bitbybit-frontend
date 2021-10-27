@@ -37,18 +37,19 @@ const TextWrapper = styled.div`
 `;
 
 const HeroImageWrapper = styled.div`
-  z-index: 9999;
+  z-index: 99;
+  position: relative;
   flex: 1;
   #earth {
     margin: 0 auto;
-  }
-  img {
-    max-width: 400px;
-    min-width: 220px;
+    z-index: 99;
   }
 `;
 
-const Hero = () => {
+const Hero = ({ onClickBuy }) => {
+  const handleClick = () => {
+    onClickBuy();
+  };
   return (
     <ContentWrapper>
       <HeroWrapper>
@@ -63,7 +64,9 @@ const Hero = () => {
           </h1>
           <h2>Invest and donate to charity simultaneously.</h2>
           <div className="buttons-wrapper">
-            <Button variant="primary">Buy now</Button>
+            <Button variant="primary" onClick={handleClick}>
+              Buy now
+            </Button>
             <Button variant="secondary">Learn more</Button>
           </div>
         </TextWrapper>

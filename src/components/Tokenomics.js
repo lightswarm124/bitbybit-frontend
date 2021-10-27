@@ -1,6 +1,6 @@
 import React from "react";
-import BlockHeading from "./components/BlockHeading";
-import ContentWrapper from "./components/ContentWrapper";
+import BlockHeading from "./BlockHeading";
+import ContentWrapper from "./ContentWrapper";
 import styled from "@emotion/styled";
 
 const TokenomicsSection = styled.div`
@@ -47,12 +47,12 @@ const tokenomicsData = [
     data: "0.000021 BNB",
   },
   {
-    title: "Hard Cap",
-    data: "BitByBit",
+    title: "Soft Cap",
+    data: "20,000,000",
   },
   {
-    title: "Soft Cap",
-    data: "BitByBit",
+    title: "Hard Cap",
+    data: "TBD",
   },
   {
     title: "Crowd Sale Refundable",

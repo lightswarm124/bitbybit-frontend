@@ -5,9 +5,12 @@ import Hero from "../src/components/Hero";
 import About from "../src/components/About";
 import Charity from "../src/components/Charity";
 import Roadmap from "./components/Roadmap.js";
-import Tokenomics from "./Tokenomics.js";
+import Tokenomics from "./components/Tokenomics.js";
 import Footer from "./components/Footer";
+import Modal from "react-modal";
 import "./styles/stars.css";
+import Button from "./components/_ui/Button";
+import styled from "@emotion/styled";
 
 const pageStyles = {
   margin: 0,
@@ -18,12 +21,29 @@ const pageStyles = {
   boxSize: "border-box",
 };
 
+const modalStyles = {
+  content: {
+    zIndex: "999999 !important",
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+const CloseButton = styled.button`
+  border: none;
+  background: none;
+  font-weight: 600;
+`;
+
 function App() {
   const [simpleStorage, setSimpleStorage] = useState(undefined);
   const [userWallet, setUserWallet] = useState(undefined);
   const [data, setData] = useState("");
-  // const [walletAddress, setWalletAddress] = useState(undefined);
-  console.log(simpleStorage);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
   console.log(data);
 
   const integrateWallet = () => {
@@ -38,29 +58,41 @@ function App() {
     init();
   };
 
-  // const updateData = async (e) => {
-  //   e.preventDefault();
-  //   const data = e.target.elements[0].value;
-  //   const tx = await simpleStorage.updateData(data);
-  //   await tx.wait();
-  //   const newData = await simpleStorage.readData();
-  //   newData !== "undefined" && setData(newData);
-  //   console.log(newData);
-  // };
+  const updateData = async (e) => {
+    e.preventDefault();
+    if (userWallet) {
+      const amount = e.target.elements[0].value;
+      const tx = await simpleStorage.updateData(amount);
+      await tx.wait();
+      const newData = await simpleStorage.readData();
+      console.log(newData);
+      newData !== "undefined" && setData(newData);
+    } else {
+      alert("Please connect your Metamask wallet to purchase tokens.");
+    }
+  };
 
-  // if (typeof simpleStorage === "undefined" || typeof data === "undefined") {
-  //   return "Loading...";
-  // }
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
     <>
-      <main style={pageStyles}>
+      <main id="main" style={pageStyles}>
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
         <title>BitByBit</title>
         <Navbar wallet={userWallet} onClickLogin={integrateWallet} />
-        <Hero />
+        <Hero onClickBuy={openModal} />
         <About />
         <Charity />
         <Roadmap />
@@ -68,28 +100,29 @@ function App() {
         <Footer />
         <div id="stars2"></div>
         <div id="stars3"></div>
-        {/* <div className="container">
-          <div className="row">
-            <div className="col-sm-6">
-              <h2>Data:</h2>
-              <p>{data.toString()}</p>
-            </div>
-
-            <div className="col-sm-6">
-              <h2>Purchase BitByBit tokens</h2>
-              <form className="form-inline" onSubmit={(e) => updateData(e)}>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Quantity to purchase"
-                />
-                <button type="submit" className="btn btn-primary">
-                  Purchase
-                </button>
-              </form>
-            </div>
-          </div>
-        </div> */}
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={modalStyles}
+          contentLabel="Purchase BBB"
+          appElement={document.getElementById("main")}
+        >
+          <CloseButton variant="primary" onClick={closeModal}>
+            X
+          </CloseButton>
+          <h2>Purchase BitByBit tokens</h2>
+          <form className="form-inline" onSubmit={(e) => updateData(e)}>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Quantity to purchase"
+            />
+            <Button type="submit" variant="primary">
+              Purchase
+            </Button>
+          </form>
+        </Modal>
       </main>
     </>
   );

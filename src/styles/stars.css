@@ -72,3 +72,8 @@ html {
         transform: translateY(-700px);
     }
 }
+
+.ReactModal__Overlay,
+.ReactModal__Overlay--after-open {
+    z-index: 9999 !important;
+}
