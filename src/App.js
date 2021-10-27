@@ -11,6 +11,7 @@ import Modal from "react-modal";
 import "./styles/stars.css";
 import Button from "./components/_ui/Button";
 import styled from "@emotion/styled";
+import { ethers } from "ethers";
 
 const pageStyles = {
   margin: 0,
@@ -44,29 +45,54 @@ function App() {
   const [userWallet, setUserWallet] = useState(undefined);
   const [data, setData] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  console.log(data);
 
   const integrateWallet = () => {
     const init = async () => {
       const { simpleStorage } = await getBlockchain();
-      const data = await simpleStorage.readData();
+      // const data = await simpleStorage.readData();
       setSimpleStorage(simpleStorage);
-      console.log(simpleStorage);
       setData(data);
       setUserWallet(simpleStorage.signer.provider.provider.selectedAddress);
     };
     init();
   };
 
-  const updateData = async (e) => {
+  const purchaseTokens = async (e) => {
     e.preventDefault();
     if (userWallet) {
       const amount = e.target.elements[0].value;
-      const tx = await simpleStorage.updateData(amount);
-      await tx.wait();
-      const newData = await simpleStorage.readData();
-      console.log(newData);
-      newData !== "undefined" && setData(newData);
+      if (!amount) {
+        alert("Please enter an amount to purchase.");
+        return;
+      }
+      const ethAmount = ethers.utils.parseEther(amount);
+      const contract = simpleStorage;
+      // const tx = await simpleStorage.buyTokens(userWallet);
+      // await tx.wait();
+      setData(data);
+      // const newData = await simpleStorage.readData();
+      // newData !== "undefined" && setData(newData);
+
+      await contract
+        .buyTokens(userWallet, { value: ethAmount })
+        .then((remainingBalance) => {
+          // setLoading(false);
+          // setValue("");
+          // setConvertedValue("");
+          alert("Transaction Complete", remainingBalance);
+          // dispatch(
+          //   setUserBalance({
+          //     flag: false,
+          //     balance: state?.userBalance - convertedValue,
+          //   })
+          // );
+          // handleClose();
+        })
+        .catch((err) => {
+          // setLoading(false);
+          console.log(err);
+          alert("Transaction failed: " + err?.data.message);
+        });
     } else {
       alert("Please connect your Metamask wallet to purchase tokens.");
     }
@@ -112,7 +138,7 @@ function App() {
             X
           </CloseButton>
           <h2>Purchase BitByBit tokens</h2>
-          <form className="form-inline" onSubmit={(e) => updateData(e)}>
+          <form className="form-inline" onSubmit={(e) => purchaseTokens(e)}>
             <input
               type="text"
               className="form-control"

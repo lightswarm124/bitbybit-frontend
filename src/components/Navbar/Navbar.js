@@ -119,7 +119,6 @@ const Navbar = ({ wallet, onClickLogin }) => {
   const handleClick = () => {
     onClickLogin();
   };
-  console.log("Wallet: " + wallet);
   const abbreviatedWallet = `${wallet?.slice(0, 2)}...${wallet?.slice(
     wallet.length - 5
   )}`;
