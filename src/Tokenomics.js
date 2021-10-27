@@ -8,6 +8,7 @@ const TokenomicsSection = styled.div`
 
   .tokenomics-items {
     width: 100%;
+    margin-left: 3rem;
     min-height: 10vh;
     display: flex;
     flex-wrap: wrap;
