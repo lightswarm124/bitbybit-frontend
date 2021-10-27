@@ -15,6 +15,7 @@ const pageStyles = {
   minHeight: "100wh",
   color: "white",
   fontFamily: "Roboto, sans-serif",
+  boxSize: "border-box",
 };
 
 function App() {

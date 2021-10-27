@@ -7,13 +7,19 @@ const FooterWrapper = styled.div`
   background: #220969;
   width: 100vw;
   z-index: 999;
+  position: relative;
   height: 30vh;
   display: flex;
   flex-direction: column;
 
   .content {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+
+    div {
+      flex-basis: 100%;
+    }
   }
 
   .brand {
