@@ -6,6 +6,7 @@ import About from "../src/components/About";
 import Charity from "../src/components/Charity";
 import Roadmap from "./components/Roadmap.js";
 import Tokenomics from "./Tokenomics.js";
+import Footer from "./components/Footer";
 import "./styles/stars.css";
 
 const pageStyles = {
@@ -60,6 +61,7 @@ function App() {
         <Charity />
         <Roadmap />
         <Tokenomics />
+        <Footer />
         <div id="stars2"></div>
         <div id="stars3"></div>
         {/* <div className="container">
