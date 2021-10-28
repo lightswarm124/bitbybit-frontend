@@ -9,7 +9,7 @@ import styled from "@emotion/styled";
 const FeatureWrapper = styled.div`
   background-color: #220969;
   position: relative;
-  z-index: 99999;
+  z-index: 999;
   padding-bottom: 4rem;
 
   .feature {
