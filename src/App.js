@@ -15,6 +15,7 @@ import styled from "@emotion/styled";
 import { ethers } from "ethers";
 import Team from "./components/Team.js";
 import Contact from "./components/Contact.js";
+import { Form } from "react-bootstrap";
 
 const pageStyles = {
   margin: 0,
@@ -27,6 +28,8 @@ const pageStyles = {
 
 const modalStyles = {
   content: {
+    background: "black",
+    color: "white",
     zIndex: "999999 !important",
     top: "50%",
     left: "50%",
@@ -37,10 +40,25 @@ const modalStyles = {
   },
 };
 
+const ModalContent = styled.div`
+  padding: 1rem;
+
+  h2 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+`;
+
 const CloseButton = styled.button`
   border: none;
   background: none;
   font-weight: 600;
+  color: white;
 `;
 
 function App() {
@@ -122,20 +140,35 @@ function App() {
           contentLabel="Purchase BBB"
           appElement={document.getElementById("main")}
         >
-          <CloseButton variant="primary" onClick={closeModal}>
-            X
-          </CloseButton>
-          <h2>Purchase BitByBit tokens</h2>
-          <form className="form-inline" onSubmit={(e) => purchaseTokens(e)}>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Quantity to purchase"
-            />
-            <Button type="submit" variant="primary">
-              Purchase
-            </Button>
-          </form>
+          <ModalContent>
+            <CloseButton variant="primary" onClick={closeModal}>
+              X
+            </CloseButton>
+            <h2>Purchase BitByBit tokens</h2>
+            <Form className="form" onSubmit={(e) => purchaseTokens(e)}>
+              <Form.Group>
+                <Form.Control
+                  type="text"
+                  className="form-control"
+                  placeholder="Quantity to purchase"
+                />
+              </Form.Group>
+              <br />
+              <p>
+                Current ICO price: <span classname="price">0.000021 BNB</span>
+              </p>
+              <Button
+                type="submit"
+                variant="primary"
+                style={{ marginRight: "1rem" }}
+              >
+                Purchase
+              </Button>
+              <Button type="submit" variant="secondary">
+                Cancel
+              </Button>
+            </Form>
+          </ModalContent>
         </Modal>
       </main>
     </>
