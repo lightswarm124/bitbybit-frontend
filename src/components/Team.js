@@ -24,6 +24,7 @@ const TeamSection = styled.div`
 
     h4 {
       color: #c61ab6;
+      font-size: 1.2rem;
     }
 
     .headshot {

@@ -14,6 +14,7 @@ import Button from "./components/_ui/Button";
 import styled from "@emotion/styled";
 import { ethers } from "ethers";
 import Team from "./components/Team.js";
+import Contact from "./components/Contact.js";
 
 const pageStyles = {
   margin: 0,
@@ -109,6 +110,7 @@ function App() {
         <Roadmap />
         <Tokenomics />
         <Team />
+        <Contact />
         <Footer />
         <Modal
           isOpen={modalIsOpen}

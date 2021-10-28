@@ -8,7 +8,6 @@ const FooterWrapper = styled.div`
   width: 100vw;
   z-index: 999;
   position: relative;
-  height: 30vh;
   display: flex;
   flex-direction: column;
 
@@ -16,6 +15,13 @@ const FooterWrapper = styled.div`
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
+    padding-top: 4rem;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      padding-top: 2.5rem;
+    }
 
     div {
       flex-basis: 100%;
@@ -23,8 +29,11 @@ const FooterWrapper = styled.div`
   }
 
   .brand {
+    @media (max-width: 768px) {
+      margin-bottom: 1rem;
+    }
     img {
-      width: 65%;
+      width: 90px;
       margin-bottom: 1rem;
     }
 
@@ -34,12 +43,14 @@ const FooterWrapper = styled.div`
   }
 
   .links {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 3rem;
     margin: 0 4rem;
 
     @media (max-width: 768px) {
-      margin: 0 1rem;
+      margin: 0;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     a {
@@ -52,8 +63,13 @@ const FooterWrapper = styled.div`
 
   .copyright {
     margin: 0 auto;
-    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
     font-size: 0.7rem;
+    background-color: #220969;
   }
 `;
 
@@ -71,12 +87,12 @@ const Footer = () => {
         </div>
         <div className="links">
           <a href="#home">Home</a>
-          <a href="#About">About</a>
-          <a href="#Charity">Charity</a>
-        </div>
-        <div className="links">
-          <a href="#Roadmap">Roadmap</a>
-          <a href="#Contact">Contact</a>
+          <a href="#about">About</a>
+          <a href="#charity">Charity</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact">Whitepaper</a>
         </div>
         <div className="social"></div>
       </ContentWrapper>
