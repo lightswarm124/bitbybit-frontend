@@ -6,9 +6,10 @@ import blocksIllustration from "../images/blocks-illustration.png";
 
 const AboutSection = styled("div")`
   z-index: 9999;
-  padding: 2rem 0;
-  background: #220969;
-  color: white;
+  padding: 4rem 0;
+  padding-bottom: 8rem;
+  background: white;
+  color: #220969;
   width: 100%;
 `;
 
@@ -17,23 +18,20 @@ const AboutWrapper = styled.div`
   display: flex;
   margin-left: 3rem;
 
+  .about-text {
+    flex: 1;
+  }
+
   @media (max-width: 1000px) {
     flex-direction: column;
   }
 
   .image-wrapper {
     flex: 1;
-    max-width: 50%;
-    margin-left: 2rem;
-    margin-top: -2rem;
-    z-index: 9999;
 
     img {
       width: 100%;
     }
-  }
-  .about-text {
-    flex: 1;
   }
 `;
 
@@ -54,7 +52,9 @@ const About = () => {
               tokens are sent to the charity’s crypto wallet. Charitable
               organizations are contracted quarterly for use of this technology.
             </p>
-
+            <div className="image-wrapper">
+              <img src={blocksIllustration} alt="people sitting on blocks" />
+            </div>
             <p>
               With a strong team of developers, Bitbybit is dedicated to
               providing awareness and funding for charitable organizations. This
@@ -62,9 +62,6 @@ const About = () => {
               innovative financing mechanisms. Our goal is to provide charitable
               organizations across the world access to blockchain technology.
             </p>
-          </div>
-          <div className="image-wrapper">
-            <img src={blocksIllustration} alt="people sitting on blocks" />
           </div>
         </AboutWrapper>
       </ContentWrapper>

@@ -10,13 +10,13 @@ const FeatureWrapper = styled.div`
   background-color: #220969;
   position: relative;
   z-index: 99999;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
 
   .feature {
     display: flex;
     flex-direction: row;
+    margin: 2rem 0;
     margin-left: 3rem;
-    margin-bottom: 1rem;
 
     .icon-wrapper {
       background-color: #ff2498;

@@ -1,3 +1,12 @@
+.vertical-timeline-element {
+    margin: 0;
+}
+
+.vertical-timeline-element-content {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
 .vertical-timeline-element-title {
     font-size: 1.2rem;
     color: #480EF2;
@@ -9,6 +18,15 @@
     justify-content: center;
     align-items: center;
 }
+
+@media only screen and (min-width: 1170px) {
+
+    .vertical-timeline-element:nth-child(odd):not(.vertical-timeline-element--left .vertical-timeline-element-content) {
+        text-align: right;
+    }
+
+}
+
 
 ul {
     margin: 0;

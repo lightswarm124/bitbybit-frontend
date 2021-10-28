@@ -7,9 +7,8 @@ import unitedWay from "../images/united-way.png";
 const CharitySection = styled("div")`
   background: #220969;
   color: white !important;
-  padding: 2rem 0;
   color: black;
-  padding: 5rem 0;
+  padding-bottom: 6rem;
 `;
 
 const CharityWrapper = styled.div`
@@ -23,11 +22,12 @@ const CharityWrapper = styled.div`
   .charity-text {
     flex: 1;
     margin-left: 3rem;
+    padding-right: 3rem;
   }
 
   .charity-image {
     flex: 1;
-    max-width: 50%;
+    max-width: 30%;
     flex: 1;
     margin-left: 2rem;
     margin-top: -2rem;
