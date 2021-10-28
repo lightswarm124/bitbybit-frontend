@@ -3,7 +3,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import BlockHeading from "./BlockHeading";
+import BlockHeading from "./_ui/BlockHeading";
 import ContentWrapper from "./ContentWrapper";
 import "../styles/roadmap.css";
 import Checkmark from "../images/checkmark.png";

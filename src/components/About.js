@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import BlockHeading from "./BlockHeading";
+import BlockHeading from "./_ui/BlockHeading";
 import ContentWrapper from "./ContentWrapper";
 import blocksIllustration from "../images/blocks-illustration.png";
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import getBlockchain from "./ethereum.js";
 import Navbar from "../src/components/Navbar/Navbar";
 import Hero from "../src/components/Hero";
+import Features from "./components/Features.js";
 import About from "../src/components/About";
 import Charity from "../src/components/Charity";
 import Roadmap from "./components/Roadmap.js";
@@ -67,31 +68,16 @@ function App() {
       }
       const ethAmount = ethers.utils.parseEther(amount);
       const contract = simpleStorage;
-      // const tx = await simpleStorage.buyTokens(userWallet);
-      // await tx.wait();
       setData(data);
-      // const newData = await simpleStorage.readData();
-      // newData !== "undefined" && setData(newData);
-
       await contract
         .buyTokens(userWallet, { value: ethAmount })
         .then((remainingBalance) => {
-          // setLoading(false);
-          // setValue("");
-          // setConvertedValue("");
+          setIsOpen(false);
           alert("Transaction Complete", remainingBalance);
-          // dispatch(
-          //   setUserBalance({
-          //     flag: false,
-          //     balance: state?.userBalance - convertedValue,
-          //   })
-          // );
-          // handleClose();
         })
         .catch((err) => {
-          // setLoading(false);
           console.log(err);
-          alert("Transaction failed: " + err?.data.message);
+          alert("Transaction failed. Error message: " + err?.data.message);
         });
     } else {
       alert("Please connect your Metamask wallet to purchase tokens.");
@@ -113,12 +99,10 @@ function App() {
   return (
     <>
       <main id="main" style={pageStyles}>
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
         <title>BitByBit</title>
         <Navbar wallet={userWallet} onClickLogin={integrateWallet} />
         <Hero onClickBuy={openModal} />
+        <Features />
         <About />
         <Charity />
         <Roadmap />

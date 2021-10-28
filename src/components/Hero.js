@@ -3,6 +3,11 @@ import styled from "@emotion/styled";
 import ContentWrapper from "./ContentWrapper";
 import Button from "../components/_ui/Button";
 import "../styles/globe.css";
+import "../styles/stars.css";
+
+const HeroBackground = styled.div`
+  background: #0b0321;
+`;
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -51,30 +56,34 @@ const Hero = ({ onClickBuy }) => {
     onClickBuy();
   };
   return (
-    <ContentWrapper>
-      <HeroWrapper>
-        <TextWrapper>
-          <h1>
-            Changing
-            <span> the </span>
-            World <br />
-            Bit
-            <span> by </span>
-            Bit
-          </h1>
-          <h2>Invest and donate to charity simultaneously.</h2>
-          <div className="buttons-wrapper">
-            <Button variant="primary" onClick={handleClick}>
-              Buy now
-            </Button>
-            <Button variant="secondary">Learn more</Button>
-          </div>
-        </TextWrapper>
-        <HeroImageWrapper>
-          <div id="earth" />
-        </HeroImageWrapper>
-      </HeroWrapper>
-    </ContentWrapper>
+    <HeroBackground>
+      <div id="stars2" />
+      <div id="stars3" />
+      <ContentWrapper>
+        <HeroWrapper>
+          <TextWrapper>
+            <h1>
+              Changing
+              <span> the </span>
+              World <br />
+              Bit
+              <span> by </span>
+              Bit
+            </h1>
+            <h2>Invest and donate to charity simultaneously.</h2>
+            <div className="buttons-wrapper">
+              <Button variant="primary" onClick={handleClick}>
+                Buy now
+              </Button>
+              <Button variant="secondary">Learn more</Button>
+            </div>
+          </TextWrapper>
+          <HeroImageWrapper>
+            <div id="earth" />
+          </HeroImageWrapper>
+        </HeroWrapper>
+      </ContentWrapper>
+    </HeroBackground>
   );
 };
 

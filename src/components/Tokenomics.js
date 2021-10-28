@@ -1,5 +1,5 @@
 import React from "react";
-import BlockHeading from "./BlockHeading";
+import BlockHeading from "./_ui/BlockHeading";
 import ContentWrapper from "./ContentWrapper";
 import styled from "@emotion/styled";
 
@@ -7,7 +7,7 @@ const TokenomicsSection = styled.div`
   background: #220969;
 
   .tokenomics-items {
-    width: 100%;
+    max-width: 100%;
     margin-left: 3rem;
     min-height: 10vh;
     display: flex;

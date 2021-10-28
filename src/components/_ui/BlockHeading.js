@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import Block from "../images/bbbBlock.png";
+import Block from "../../images/bbbBlock.png";
 
 const HeadingWrapper = styled.div`
   width: 100%;

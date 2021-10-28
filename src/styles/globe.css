@@ -8,14 +8,14 @@ body {
     height: 300px;
     background: url('../images/worldMap.png');
     border-radius: 50%;
-    background-size: 610px;
-    box-shadow: inset 8px 6px 80px 6px rgb(0, 0, 0), inset -6px 0 12px 4px rgba(255, 255, 255, 0.3);
+    background-size: 710px;
+    box-shadow: inset 8px 6px 80px 6px rgb(0, 0, 0), inset -6px 0 12px 4px rgba(255, 255, 255, 0.5);
     animation-name: rotate;
-    animation-duration: 72s;
+    animation-duration: 220s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     -webkit-animation-name: rotate;
-    -webkit-animation-duration: 72s;
+    -webkit-animation-duration: 220s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
 }
