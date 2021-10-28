@@ -12,6 +12,7 @@ import styled from "@emotion/styled";
 const RoadmapWrapper = styled.div`
   background-color: white;
   color: #220969;
+  padding-bottom: 6rem;
 `;
 
 const Roadmap = () => {

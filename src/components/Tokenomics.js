@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 
 const TokenomicsSection = styled.div`
   background: #220969;
+  padding-bottom: 6rem;
 
   .tokenomics-items {
     max-width: 100%;
