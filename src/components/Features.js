@@ -2,8 +2,8 @@ import React from "react";
 import ContentWrapper from "./ContentWrapper";
 import BlockHeading from "./_ui/BlockHeading";
 import CharityIcon from "../images/icons/charity-icon.png";
-import GlobeIcon from "../images/icons/globe-icon.png";
-import PhoneIcon from "../images/icons/phone-icon.png";
+// import GlobeIcon from "../images/icons/globe-icon.png";
+// import PhoneIcon from "../images/icons/phone-icon.png";
 import styled from "@emotion/styled";
 
 const FeatureWrapper = styled.div`
