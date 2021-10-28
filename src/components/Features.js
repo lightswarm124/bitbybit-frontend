@@ -4,6 +4,7 @@ import BlockHeading from "./_ui/BlockHeading";
 const Features = () => {
   return (
     <div>
+      <BlockHeading title="Features" />
       <p>Features</p>
     </div>
   );
