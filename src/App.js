@@ -108,8 +108,6 @@ function App() {
         <Roadmap />
         <Tokenomics />
         <Footer />
-        <div id="stars2"></div>
-        <div id="stars3"></div>
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}

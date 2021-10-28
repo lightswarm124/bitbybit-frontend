@@ -8,6 +8,7 @@ const HeadingWrapper = styled.div`
 
   img {
     width: 3.5rem;
+    margin-top: -1.5rem;
   }
 
   h3 {
@@ -15,6 +16,16 @@ const HeadingWrapper = styled.div`
     margin-left: 2.75rem;
     margin-bottom: 1.5rem;
     font-size: 2.2rem;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 2.5rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin-top: -0.5rem;
+    }
   }
 `;
 

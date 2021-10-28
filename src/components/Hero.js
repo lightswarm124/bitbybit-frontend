@@ -15,6 +15,10 @@ const HeroWrapper = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 7rem 0;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 0;
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -33,10 +37,27 @@ const TextWrapper = styled.div`
     font-size: 1.2rem;
   }
 
+  @media (max-width: 768px) {
+    h1 {
+      line-height: 2.2rem;
+    }
+    h2 {
+      font-size: 1rem;
+      line-height: 1.8rem;
+    }
+  }
   .buttons-wrapper {
     margin-top: 2rem;
     button {
       margin-right: 2rem;
+    }
+    @media (max-width: 768px) {
+      margin-top: 1rem;
+      display: flex;
+
+      button {
+        font-size: 0.85rem;
+      }
     }
   }
 `;
@@ -57,7 +78,6 @@ const Hero = ({ onClickBuy }) => {
   };
   return (
     <HeroBackground>
-      <div id="stars2" />
       <div id="stars3" />
       <ContentWrapper>
         <HeroWrapper>
@@ -70,7 +90,7 @@ const Hero = ({ onClickBuy }) => {
               <span> by </span>
               Bit
             </h1>
-            <h2>Invest and donate to charity simultaneously.</h2>
+            <h2>Invest and earn money while donating to charity.</h2>
             <div className="buttons-wrapper">
               <Button variant="primary" onClick={handleClick}>
                 Buy now

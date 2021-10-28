@@ -38,6 +38,10 @@ const FooterWrapper = styled.div`
     flex-direction: column;
     margin: 0 4rem;
 
+    @media (max-width: 768px) {
+      margin: 0 1rem;
+    }
+
     a {
       text-decoration: none;
       color: white;

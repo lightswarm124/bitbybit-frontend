@@ -20,6 +20,15 @@ body {
     -webkit-animation-timing-function: linear;
 }
 
+@media only screen and (max-width: 768px) {
+    #earth {
+        width: 200px;
+        height: 200px;
+        margin-top: 2rem !important;
+        order: 2;
+    }
+}
+
 @keyframes rotate {
     from {
         background-position: 0px 0px;
