@@ -13,6 +13,7 @@ import "./styles/stars.css";
 import Button from "./components/_ui/Button";
 import styled from "@emotion/styled";
 import { ethers } from "ethers";
+import Team from "./components/Team.js";
 
 const pageStyles = {
   margin: 0,
@@ -107,6 +108,7 @@ function App() {
         <Charity />
         <Roadmap />
         <Tokenomics />
+        <Team />
         <Footer />
         <Modal
           isOpen={modalIsOpen}

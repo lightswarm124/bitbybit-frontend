@@ -32,9 +32,10 @@ const CharityWrapper = styled.div`
     margin-left: 2rem;
     margin-top: -2rem;
     z-index: 9999;
-  }
-  img {
-    width: 100%;
+
+    img {
+      width: 100%;
+    }
   }
 `;
 
