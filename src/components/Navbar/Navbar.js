@@ -15,7 +15,6 @@ const Navigation = styled.nav`
   z-index: 2;
   align-self: center;
   @media (max-width: 768px) {
-    position: sticky;
     height: 8vh;
     top: 0;
     left: 0;
@@ -50,6 +49,7 @@ const Toggle = styled.div`
 
   @media (max-width: 768px) {
     order: 3;
+    padding: 0.5rem;
     display: flex;
   }
 `;
