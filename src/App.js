@@ -122,6 +122,7 @@ function App() {
 
   function closeModal() {
     setIsOpen(false);
+    setBbbAmount("0");
   }
 
   function handleChange(event) {
@@ -170,9 +171,11 @@ function App() {
                 />
               </Form.Group>
               <br />
-              <p className="amounts">
-                {bbbAmount} BBB = {bnbAmount} BNB
-              </p>
+              {bbbAmount > 0 && (
+                <p className="amounts">
+                  {bbbAmount} BBB = {bnbAmount} BNB
+                </p>
+              )}
               <Button
                 type="submit"
                 variant="primary"
@@ -180,7 +183,7 @@ function App() {
               >
                 Purchase
               </Button>
-              <Button type="submit" variant="secondary">
+              <Button type="submit" onClick={closeModal} variant="secondary">
                 Cancel
               </Button>
             </Form>
