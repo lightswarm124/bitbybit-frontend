@@ -28,7 +28,7 @@ const pageStyles = {
 
 const modalStyles = {
   content: {
-    background: "black",
+    background: "#220969",
     color: "white",
     zIndex: "999999 !important",
     top: "50%",
@@ -52,6 +52,10 @@ const ModalContent = styled.div`
   p {
     font-size: 0.85rem;
   }
+
+  .amounts {
+    font-size: 1rem;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -64,6 +68,8 @@ const CloseButton = styled.button`
 function App() {
   const [simpleStorage, setSimpleStorage] = useState(undefined);
   const [userWallet, setUserWallet] = useState(undefined);
+  const [bnbAmount, setBnbAmount] = useState("");
+  const [bbbAmount, setBbbAmount] = useState("");
   const [data, setData] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -81,7 +87,7 @@ function App() {
   const purchaseTokens = async (e) => {
     e.preventDefault();
     if (userWallet) {
-      const amount = e.target.elements[0].value;
+      const amount = bnbAmount.toString();
       if (!amount) {
         alert("Please enter an amount to purchase.");
         return;
@@ -118,6 +124,12 @@ function App() {
     setIsOpen(false);
   }
 
+  function handleChange(event) {
+    setBbbAmount(event.target.value);
+    const bnbTokens = event.target.value * 0.000021;
+    setBnbAmount(bnbTokens);
+  }
+
   return (
     <>
       <main id="main" style={pageStyles}>
@@ -145,17 +157,21 @@ function App() {
               X
             </CloseButton>
             <h2>Purchase BitByBit tokens</h2>
+            <p>
+              Current ICO price: <span classname="price">0.000021 BNB</span>
+            </p>
             <Form className="form" onSubmit={(e) => purchaseTokens(e)}>
               <Form.Group>
                 <Form.Control
+                  onChange={handleChange}
                   type="text"
                   className="form-control"
                   placeholder="Quantity to purchase"
                 />
               </Form.Group>
               <br />
-              <p>
-                Current ICO price: <span classname="price">0.000021 BNB</span>
+              <p className="amounts">
+                {bbbAmount} BBB = {bnbAmount} BNB
               </p>
               <Button
                 type="submit"
