@@ -8,7 +8,7 @@ const HeadingWrapper = styled.div`
 
   img {
     width: 3.5rem;
-    margin-top: -1.5rem;
+    margin-top: 3rem;
   }
 
   h3 {

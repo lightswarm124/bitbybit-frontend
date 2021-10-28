@@ -79,7 +79,9 @@ function App() {
         })
         .catch((err) => {
           console.log(err);
-          alert("Transaction failed. Error message: " + err?.data.message);
+          err?.data?.message &&
+            alert("Transaction failed. Error message: " + err?.data.message);
+          err?.message && alert(err.message);
         });
     } else {
       alert("Please connect your Metamask wallet to purchase tokens.");
