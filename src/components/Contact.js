@@ -22,18 +22,10 @@ const ContactSection = styled.div`
 `;
 
 const Contact = () => {
-  const [success, setSuccess] = useState(false);
-
-  useEffect(() => {
-    if (window.location.search.includes("success=true")) {
-      setSuccess(true);
-    }
-  }, []);
   return (
     <ContactSection>
       <ContentWrapper id="contact">
         <BlockHeading title="Contact Us" />
-        {success && <p style={{ color: "green" }}>Thanks for your message! </p>}
         <Form
           name="contact"
           method="POST"

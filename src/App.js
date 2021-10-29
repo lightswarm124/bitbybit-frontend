@@ -72,6 +72,7 @@ function App() {
   const [bbbAmount, setBbbAmount] = useState("");
   const [data, setData] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [success, setSuccess] = useState(false)
 
   const integrateWallet = () => {
     const init = async () => {
@@ -131,11 +132,22 @@ function App() {
     setBnbAmount(bnbTokens);
   }
 
+  useEffect(() => {
+    if (window.location.search.includes("success=true")) {
+      setSuccess(true);
+    }
+
   return (
     <>
       <main id="main" style={pageStyles}>
         <title>BitByBit</title>
         <Navbar wallet={userWallet} onClickLogin={integrateWallet} />
+        {success && (
+          <div className="alert">
+            Thank you for your information. We will reply to your query as soon
+            as possible.
+          </div>
+        )}
         <Hero onClickBuy={openModal} />
         <Features />
         <About />
