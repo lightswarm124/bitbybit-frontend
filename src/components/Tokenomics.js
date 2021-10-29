@@ -37,7 +37,7 @@ const TokenomicsSection = styled.div`
 const tokenomicsData = [
   {
     title: "Token Name",
-    data: "BitByBit",
+    data: "Bitbybit",
   },
   {
     title: "Network",
