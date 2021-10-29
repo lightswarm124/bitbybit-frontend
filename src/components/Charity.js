@@ -42,7 +42,7 @@ const CharityWrapper = styled.div`
 const Charity = () => {
   return (
     <CharitySection>
-      <ContentWrapper>
+      <ContentWrapper id="charity">
         <BlockHeading title="Charity" />
         <CharityWrapper>
           <div className="charity-text">

@@ -38,7 +38,7 @@ const AboutWrapper = styled.div`
 const About = () => {
   return (
     <AboutSection>
-      <ContentWrapper>
+      <ContentWrapper id="about">
         <BlockHeading title="How it works" />
         <AboutWrapper>
           <div className="about-text">

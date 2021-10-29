@@ -45,7 +45,7 @@ const TeamSection = styled.div`
 const Team = () => {
   return (
     <TeamSection>
-      <ContentWrapper>
+      <ContentWrapper id="team">
         <BlockHeading title="Meet Our Team" />
         <div className="people">
           <div className="person">

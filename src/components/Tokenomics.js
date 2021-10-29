@@ -64,7 +64,7 @@ const tokenomicsData = [
 const Tokenomics = () => {
   return (
     <TokenomicsSection>
-      <ContentWrapper>
+      <ContentWrapper id="tokenomics">
         <BlockHeading title="Tokenomics" />
         <div className="tokenomics-items">
           {tokenomicsData.map((item) => (

@@ -36,10 +36,12 @@ const NavItem = styled("a")`
 const NavbarLinks = () => {
   return (
     <>
-      <NavItem to="/">About</NavItem>
-      <NavItem to="/404">Charity</NavItem>
-      <NavItem to="/">Roadmap</NavItem>
-      <NavItem to="/404">Contact</NavItem>
+      <NavItem href="#about">About</NavItem>
+      <NavItem href="#charity">Charity</NavItem>
+      <NavItem href="#roadmap">Roadmap</NavItem>
+      <NavItem href="#tokenomics">Tokenomics</NavItem>
+      <NavItem href="#team">Team</NavItem>
+      <NavItem href="#contact">Contact</NavItem>
     </>
   );
 };

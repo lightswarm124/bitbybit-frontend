@@ -18,7 +18,7 @@ const RoadmapWrapper = styled.div`
 const Roadmap = () => {
   return (
     <RoadmapWrapper>
-      <ContentWrapper>
+      <ContentWrapper id="roadmap">
         <BlockHeading title="Roadmap" />
         <VerticalTimeline lineColor="#FF2498">
           <VerticalTimelineElement
