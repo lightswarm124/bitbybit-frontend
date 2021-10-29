@@ -7,6 +7,10 @@ const TokenomicsSection = styled.div`
   background: #220969;
   padding-bottom: 6rem;
 
+  @media (max-width: 768px) {
+    padding-bottom: 1rem;
+  }
+
   .tokenomics-items {
     max-width: 100%;
     margin-left: 3rem;

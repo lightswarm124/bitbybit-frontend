@@ -12,6 +12,10 @@ const FeatureWrapper = styled.div`
   z-index: 999;
   padding-bottom: 4rem;
 
+  @media (max-width: 768px) {
+    padding-bottom: 1rem;
+  }
+
   .feature {
     display: flex;
     flex-direction: row;

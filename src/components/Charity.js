@@ -26,6 +26,11 @@ const CharityWrapper = styled.div`
     margin-left: 3rem;
     padding-right: 3rem;
     font-size: 1.3rem;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+      padding-right: 0;
+    }
   }
 
   .charity-image {
@@ -39,6 +44,7 @@ const CharityWrapper = styled.div`
     @media (max-width: 800px) {
       margin-top: 1rem;
       max-width: 90%;
+      margin: 0;
     }
 
     img {
@@ -56,6 +62,10 @@ const Charity = () => {
         <CharityWrapper>
           <div className="charity-text">
             <p>Currently accepting charity partnership applications.</p>
+            <p>
+              To apply for a partnership fill out our contact form or email
+              <a href="mailto:support@bitbybit.com"> support@bitbybit.com.</a>
+            </p>
           </div>
           <div className="charity-image">
             <img src={charityImg} alt="Hands holding each other" />

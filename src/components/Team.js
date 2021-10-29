@@ -11,6 +11,10 @@ const TeamSection = styled.div`
   width: 100%;
   padding-bottom: 6rem;
 
+  @media (max-width: 768px) {
+    padding-bottom: 1rem;
+  }
+
   .people {
     display: flex;
     flex-direction: row;
@@ -32,7 +36,7 @@ const TeamSection = styled.div`
     }
 
     .headshot {
-      max-width: 60%;
+      max-width: 80%;
       z-index: 9999;
       border: 3px solid #220969;
       border-radius: 10px;

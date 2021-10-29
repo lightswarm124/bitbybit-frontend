@@ -6,11 +6,14 @@ import blocksIllustration from "../images/blocks-illustration.png";
 
 const AboutSection = styled("div")`
   z-index: 9999;
-  padding: 4rem 0;
   padding-bottom: 6rem;
   background: white;
   color: #220969;
   width: 100%;
+
+  @media (max-width: 768px) {
+    padding-bottom: 1rem;
+  }
 `;
 
 const AboutWrapper = styled.div`

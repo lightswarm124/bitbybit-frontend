@@ -13,6 +13,10 @@ const RoadmapWrapper = styled.div`
   background-color: white;
   color: #220969;
   padding-bottom: 6rem;
+
+  @media (max-width: 768px) {
+    padding-bottom: 1rem;
+  }
 `;
 
 const Roadmap = () => {

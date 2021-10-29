@@ -17,6 +17,7 @@ import { ethers } from "ethers";
 import Team from "./components/Team.js";
 import Contact from "./components/Contact.js";
 import { Form, Alert } from "react-bootstrap";
+import "typeface-roboto";
 
 const pageStyles = {
   margin: 0,
@@ -25,6 +26,7 @@ const pageStyles = {
   color: "white",
   fontFamily: "Roboto, sans-serif",
   boxSize: "border-box",
+  fontSize: "18px",
 };
 
 const modalStyles = {

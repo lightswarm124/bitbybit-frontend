@@ -30,7 +30,7 @@ const TextWrapper = styled.div`
     line-height: 4rem;
   }
   span {
-    font-weight: 400;
+    font-weight: 300;
   }
 
   h2 {
@@ -40,11 +40,12 @@ const TextWrapper = styled.div`
 
   @media (max-width: 768px) {
     h1 {
-      line-height: 2.2rem;
+      line-height: 2.5rem;
+      font-size: 5vh;
     }
     h2 {
       margin-top: 1rem;
-      font-size: 1rem;
+      font-size: 3vh;
       line-height: 1.8rem;
       margin-bottom: 2rem;
     }
@@ -83,7 +84,7 @@ const Hero = ({ onClickBuy }) => {
   return (
     <HeroBackground>
       <div id="stars3" />
-      <ContentWrapper>
+      <ContentWrapper id="home">
         <HeroWrapper>
           <TextWrapper>
             <h1>

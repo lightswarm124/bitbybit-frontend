@@ -21,6 +21,7 @@ const HeadingWrapper = styled.div`
   @media (max-width: 768px) {
     img {
       width: 3rem;
+      margin-top: 1rem;
     }
     h3 {
       font-size: 2rem;
