@@ -33,7 +33,6 @@ const FooterWrapper = styled.div`
     @media (max-width: 768px) {
       margin-bottom: 1rem;
       align-items: center;
-      justify-content: start;
     }
 
     .tagline {

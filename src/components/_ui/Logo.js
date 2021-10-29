@@ -8,6 +8,7 @@ const LogoWrapper = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
+  justify-content: flex-start;
 
   img {
     width: 2rem;

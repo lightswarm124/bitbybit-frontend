@@ -11,6 +11,10 @@ const CharitySection = styled("div")`
   padding-bottom: 6rem;
   z-index: 9999;
   position: relative;
+
+  @media (max-width: 768px) {
+    padding-bottom: 2rem;
+  }
 `;
 
 const CharityWrapper = styled.div`
@@ -25,7 +29,6 @@ const CharityWrapper = styled.div`
     flex: 1;
     margin-left: 3rem;
     padding-right: 3rem;
-    font-size: 1.3rem;
 
     @media (max-width: 768px) {
       margin-left: 0;
