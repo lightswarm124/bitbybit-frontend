@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import React from "react";
 import BlockHeading from "./_ui/BlockHeading";
 import ContentWrapper from "./ContentWrapper";
-import unitedWay from "../images/united-way.png";
+import charityImg from "../images/charity.jpg";
 
 const CharitySection = styled("div")`
   background: #220969;
@@ -23,6 +23,7 @@ const CharityWrapper = styled.div`
     flex: 1;
     margin-left: 3rem;
     padding-right: 3rem;
+    font-size: 1.3rem;
   }
 
   .charity-image {
@@ -35,6 +36,7 @@ const CharityWrapper = styled.div`
 
     img {
       width: 100%;
+      border-radius: 10px;
     }
   }
 `;
@@ -46,20 +48,10 @@ const Charity = () => {
         <BlockHeading title="Charity" />
         <CharityWrapper>
           <div className="charity-text">
-            <p>We are currently partnered with United Way Worldwide.</p>
-            <p>
-              United Way advances the common good in communities across the
-              world. Their focus is on education, income and health—the building
-              blocks for a good quality of life.
-            </p>
-            <p>
-              Staking your BBB tokens will help United Way fight for the health,
-              education, and financial stability of every person in every
-              community.
-            </p>
+            <p>Currently accepting charity partnership applications.</p>
           </div>
           <div className="charity-image">
-            <img src={unitedWay} alt="teacher helping student" />
+            <img src={charityImg} alt="Hands holding each other" />
           </div>
         </CharityWrapper>
       </ContentWrapper>
