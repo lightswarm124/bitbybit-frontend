@@ -147,7 +147,7 @@ function App() {
   return (
     <>
       <main id="main" style={pageStyles}>
-        <title>BitByBit</title>
+        <title>Bitbybit</title>
         <Navbar wallet={userWallet} onClickLogin={integrateWallet} />
         {success && (
           <Alert
