@@ -42,15 +42,15 @@ const Contact = () => {
           action="https://bitbybit.org/#contact/?success=true"
           data-netlify="true"
           data-netlify-honeypot="true"
-          enctype="application/x-www-form-urlencoded"
+          encType="application/x-www-form-urlencoded"
         >
           <input type="hidden" name="form-name" value="contact" />
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Group className="mb-3">
             <Form.Label>Name</Form.Label>
             <Form.Control id="standard-basic" name="name" type="text" />
           </Form.Group>
           <br />
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Group className="mb-3">
             <Form.Label>Email address</Form.Label>
             <Form.Control
               id="standard-basic"
@@ -61,11 +61,7 @@ const Contact = () => {
             />
           </Form.Group>
           <br />
-          <Form.Group
-            className="mb-3"
-            controlId="exampleForm.ControlTextarea1"
-            multiline
-          >
+          <Form.Group className="mb-3" multiline="true">
             <Form.Label>Message</Form.Label>
             <Form.Control
               name="message"

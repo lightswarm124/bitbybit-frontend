@@ -80,7 +80,7 @@ const Tokenomics = () => {
         <BlockHeading title="Tokenomics" />
         <div className="tokenomics-items">
           {tokenomicsData.map((item) => (
-            <div className="item">
+            <div key={item.title} className="item">
               <h4>{item.title}</h4>
               <p>{item.data}</p>
             </div>

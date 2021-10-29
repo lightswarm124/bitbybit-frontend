@@ -92,7 +92,8 @@ function App() {
   const purchaseTokens = async (e) => {
     e.preventDefault();
     if (userWallet) {
-      const amount = bnbAmount.toString();
+      let amount = bnbAmount.toString();
+      amount = Number(amount).toFixed(15);
       if (!amount) {
         alert("Please enter an amount to purchase.");
         return;
@@ -199,7 +200,7 @@ function App() {
             </CloseButton>
             <h2>Purchase BitByBit tokens</h2>
             <p>
-              Current ICO price: <span classname="price">0.000021 BNB</span>
+              Current ICO price: <span className="price">0.000021 BNB</span>
             </p>
             <Form className="form" onSubmit={(e) => purchaseTokens(e)}>
               <Form.Group>
@@ -213,7 +214,7 @@ function App() {
               <br />
               {bbbAmount > 0 && (
                 <p className="amounts">
-                  {bbbAmount} BBB = {bnbAmount} BNB
+                  {bbbAmount} BBB = {bnbAmount.toFixed(5)} BNB
                 </p>
               )}
               <Button
