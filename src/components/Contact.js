@@ -1,8 +1,10 @@
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import ContentWrapper from "./ContentWrapper";
 import Button from "../components/_ui/Button";
 import BlockHeading from "./_ui/BlockHeading";
-import { Form } from "react-bootstrap";
+import { Form, Alert } from "react-bootstrap";
+import "../styles/alertClose.css";
 
 const ContactSection = styled.div`
   width: 100%;
@@ -32,6 +34,8 @@ const ContactSection = styled.div`
 `;
 
 const Contact = () => {
+  const [show, setShow] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let myForm = document.getElementById("contactForm");
@@ -42,19 +46,45 @@ const Contact = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => console.log("Form successfully submitted"))
+      .then(() => setShow(true))
       .catch((error) => alert(error));
   };
   return (
     <ContactSection>
       <ContentWrapper id="contact">
+        {show && (
+          <Alert
+            variant="success"
+            show={show}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Button
+              style={{
+                color: "#155724",
+                border: "1px solid #155724",
+                marginRight: "1rem",
+              }}
+              onClick={() => setShow(false)}
+              variant="outline-success"
+            >
+              X
+            </Button>
+            <p style={{ margin: "auto 0" }}>
+              Thank you for your information. We will reply to your message as
+              soon as possible.
+            </p>
+          </Alert>
+        )}
         <BlockHeading title="Contact Us" />
         <Form
           id="contactForm"
           name="contact"
-          // method="POST"
           onSubmit={handleSubmit}
-          // action="https://bitbybit.org/?success=true"
           data-netlify="true"
           data-netlify-honeypot="true"
           encType="application/x-www-form-urlencoded"
