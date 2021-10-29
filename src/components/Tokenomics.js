@@ -56,8 +56,16 @@ const tokenomicsData = [
     data: "TBD",
   },
   {
+    title: "Total Supply",
+    data: "800,000,00",
+  },
+  {
     title: "Crowd Sale Refundable",
     data: "Yes",
+  },
+  {
+    title: "",
+    data: "",
   },
 ];
 
