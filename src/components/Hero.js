@@ -88,9 +88,9 @@ const Hero = ({ onClickBuy }) => {
               World <br />
               Bit
               <span> by </span>
-              Bit
+              bit
             </h1>
-            <h2>Invest and earn money while donating to charity.</h2>
+            <h2>Invest and donate to charity simultaneously.</h2>
             <div className="buttons-wrapper">
               <Button variant="primary" onClick={handleClick}>
                 Buy now

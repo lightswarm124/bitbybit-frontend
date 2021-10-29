@@ -57,7 +57,7 @@ const Features = () => {
             <img src={CharityIcon} alt="" />
           </div>
           <div className="text-wrapper">
-            <h3>Passive Income and Donations</h3>
+            <h3>Donations</h3>
             <p>75% of liquidation goes to charity</p>
           </div>
         </div>

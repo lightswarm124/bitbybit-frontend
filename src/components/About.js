@@ -43,7 +43,7 @@ const About = () => {
         <AboutWrapper>
           <div className="about-text">
             <p>
-              Bitbybit is a proof-of-stake cryptocurrency that donates 85% of
+              Bitbybit is a proof-of-stake cryptocurrency that donates 75% of
               its liquidation to charity. It is one of the first non-profit
               organizations that accepts donations through blockchain
               technology; allowing individuals to invest and donate
