@@ -95,7 +95,14 @@ const Hero = ({ onClickBuy }) => {
               <Button variant="primary" onClick={handleClick}>
                 Buy now
               </Button>
-              <Button variant="secondary">Learn more</Button>
+              <a href="#about">
+                <Button
+                  onClick="location.href='https://bitbybit.org/#about';"
+                  variant="secondary"
+                >
+                  Learn more
+                </Button>
+              </a>
             </div>
           </TextWrapper>
           <HeroImageWrapper>
