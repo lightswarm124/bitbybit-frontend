@@ -80,11 +80,16 @@ function App() {
       const { simpleStorage } = await getBlockchain();
       setSimpleStorage(simpleStorage);
       setData(data);
-      simpleStorage.signer
-        ? setUserWallet(simpleStorage.signer.provider.provider.selectedAddress)
-        : alert("Please install Metamask browser extension.");
+      setUserWallet(simpleStorage.signer.provider.provider.selectedAddress);
     };
-    init();
+    async function run() {
+      try {
+        await init();
+      } catch (e) {
+        alert(e);
+      }
+    }
+    run();
   };
 
   const purchaseTokens = async (e) => {
