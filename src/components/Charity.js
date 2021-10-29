@@ -67,7 +67,7 @@ const Charity = () => {
             <p>Currently accepting charity partnership applications.</p>
             <p>
               To apply for a partnership fill out our contact form or email
-              <a href="mailto:support@bitbybit.com"> support@bitbybit.com.</a>
+              <a href="mailto:support@bitbybit.org"> support@bitbybit.org.</a>
             </p>
           </div>
           <div className="charity-image">
