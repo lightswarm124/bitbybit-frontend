@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
-import Logo from "../images/bbbLogo.png";
+import Logo from "./_ui/Logo";
+
 import ContentWrapper from "./ContentWrapper";
 
 const FooterWrapper = styled.div`
@@ -31,14 +32,13 @@ const FooterWrapper = styled.div`
   .brand {
     @media (max-width: 768px) {
       margin-bottom: 1rem;
-    }
-    img {
-      width: 90px;
-      margin-bottom: 1rem;
+      align-items: center;
+      justify-content: start;
     }
 
-    p {
-      font-size: 0.8rem;
+    .tagline {
+      margin-top: 1rem;
+      font-size: 0.85rem;
     }
   }
 
@@ -78,8 +78,8 @@ const Footer = () => {
     <FooterWrapper>
       <ContentWrapper className="content">
         <div className="brand">
-          <img src={Logo} alt="" />
-          <p>
+          <Logo />
+          <p className="tagline">
             Changing the world
             <br />
             Bit by bit.

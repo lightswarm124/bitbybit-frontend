@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import NavbarLinks from "./NavbarLinks";
-import Logo from "../../images/bbbLogo.png";
+import Logo from "../_ui/Logo";
 import ContentWrapper from "../ContentWrapper";
 import Button from "../_ui/Button";
 
@@ -103,15 +103,6 @@ const Hamburger = styled.div`
   }
 `;
 
-const LogoImage = styled.img`
-  width: auto;
-  height: 2rem;
-
-  @media (max-width: 768px) {
-    height: 1.75rem;
-  }
-`;
-
 const Navbar = ({ wallet, onClickLogin }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleClick = () => {
@@ -127,7 +118,7 @@ const Navbar = ({ wallet, onClickLogin }) => {
         <ContentWrapper>
           <div id="stars3" />
           <NavWrapper>
-            <LogoImage src={Logo} alt="" />
+            <Logo />
             <Toggle
               navbarOpen={navbarOpen}
               onClick={() => setNavbarOpen(!navbarOpen)}
