@@ -14,6 +14,10 @@ const TeamSection = styled.div`
   .people {
     display: flex;
     flex-direction: row;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .person {

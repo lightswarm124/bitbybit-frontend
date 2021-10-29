@@ -18,24 +18,32 @@ const FeatureWrapper = styled.div`
     margin: 2rem 0;
     margin-left: 3rem;
 
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
+
     .icon-wrapper {
       background-color: #ff2498;
-      border-radius: 50%;
       width: 4rem;
       height: 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
+      border-radius: 50%;
+      position: absolute;
 
       img {
-        width: 2rem;
-        height: 2rem;
+        width: 2.5rem;
+        position: relative;
       }
     }
 
     .text-wrapper {
       margin-left: 2rem;
+      margin-left: 5rem;
 
+      @media (max-width: 768px) {
+      }
       h3 {
         font-size: 1.2rem;
         margin-bottom: 1rem;

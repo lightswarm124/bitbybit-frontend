@@ -20,11 +20,12 @@ const HeadingWrapper = styled.div`
 
   @media (max-width: 768px) {
     img {
-      width: 2.5rem;
+      width: 3rem;
     }
     h3 {
-      font-size: 1.2rem;
-      margin-top: -0.5rem;
+      font-size: 2rem;
+      margin-top: -1rem;
+      margin-left: 2.5rem;
     }
   }
 `;

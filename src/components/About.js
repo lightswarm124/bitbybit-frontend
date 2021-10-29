@@ -18,12 +18,8 @@ const AboutWrapper = styled.div`
   display: flex;
   margin-left: 3rem;
 
-  .about-text {
-    flex: 1;
-  }
-
-  @media (max-width: 1000px) {
-    flex-direction: column;
+  @media (max-width: 768px) {
+    margin-left: 0;
   }
 
   .image-wrapper {

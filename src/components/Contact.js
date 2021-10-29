@@ -14,8 +14,19 @@ const ContactSection = styled.div`
     background: rgba(255, 36, 152, 0.05);
     color: #220969;
 
+    @media (max-width: 768px) {
+      padding: 1rem;
+
+      Form {
+      }
+    }
+
     Form {
       padding-left: 3rem;
+
+      @media (max-width: 768px) {
+        padding-left: 0;
+      }
     }
   }
 `;

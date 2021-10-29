@@ -24,8 +24,7 @@ body {
     #earth {
         width: 200px;
         height: 200px;
-        margin-top: 2rem !important;
-        order: 2;
+        margin: 0;
     }
 }
 

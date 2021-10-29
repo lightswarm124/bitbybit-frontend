@@ -9,6 +9,8 @@ const CharitySection = styled("div")`
   color: white !important;
   color: black;
   padding-bottom: 6rem;
+  z-index: 9999;
+  position: relative;
 `;
 
 const CharityWrapper = styled.div`
@@ -33,6 +35,11 @@ const CharityWrapper = styled.div`
     margin-left: 2rem;
     margin-top: -2rem;
     z-index: 9999;
+
+    @media (max-width: 800px) {
+      margin-top: 1rem;
+      max-width: 90%;
+    }
 
     img {
       width: 100%;

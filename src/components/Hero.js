@@ -23,6 +23,7 @@ const HeroWrapper = styled.div`
 
 const TextWrapper = styled.div`
   flex: 1;
+  margin: 1rem 0;
 
   h1 {
     font-size: 4vh;
@@ -42,8 +43,10 @@ const TextWrapper = styled.div`
       line-height: 2.2rem;
     }
     h2 {
+      margin-top: 1rem;
       font-size: 1rem;
       line-height: 1.8rem;
+      margin-bottom: 2rem;
     }
   }
   .buttons-wrapper {
@@ -66,6 +69,7 @@ const HeroImageWrapper = styled.div`
   z-index: 99;
   position: relative;
   flex: 1;
+
   #earth {
     margin: 0 auto;
     z-index: 99;
