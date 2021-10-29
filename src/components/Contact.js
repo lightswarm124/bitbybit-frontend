@@ -39,7 +39,7 @@ const Contact = () => {
         <Form
           name="contact"
           method="POST"
-          action="https://bitbybit.org/#contact/?success=true"
+          action="https://bitbybit.org/?success=true"
           data-netlify="true"
           data-netlify-honeypot="true"
           encType="application/x-www-form-urlencoded"
