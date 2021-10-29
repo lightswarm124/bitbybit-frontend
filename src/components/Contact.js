@@ -31,16 +31,6 @@ const Contact = () => {
   }, []);
   return (
     <ContactSection>
-      {/* <Form>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="name@example.com" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Example textarea</Form.Label>
-          <Form.Control as="textarea" rows={3} />
-        </Form.Group>
-      </Form> */}
       <ContentWrapper id="contact">
         <BlockHeading title="Contact Us" />
         {success && <p style={{ color: "green" }}>Thanks for your message! </p>}
@@ -49,6 +39,7 @@ const Contact = () => {
           method="POST"
           action="https://bitbybit.org/#contact/?success=true"
           data-netlify="true"
+          enctype="application/x-www-form-urlencoded"
         >
           <input type="hidden" name="form-name" value="contact" />
           <Form.Group
@@ -59,7 +50,7 @@ const Contact = () => {
             name="name"
           >
             <Form.Label>Name</Form.Label>
-            <Form.Control type="text" />
+            <Form.Control name="name" type="text" />
           </Form.Group>
           <br />
           <Form.Group
@@ -70,7 +61,12 @@ const Contact = () => {
             name="email"
           >
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="name@example.com" />
+            <Form.Control
+              name="email"
+              type="email"
+              placeholder="name@example.com"
+              required
+            />
           </Form.Group>
           <br />
           <Form.Group
