@@ -30,7 +30,7 @@ const TeamSection = styled.div`
     .headshot {
       max-width: 60%;
       z-index: 9999;
-      border: 4px solid #220969;
+      border: 3px solid #220969;
       border-radius: 10px;
       margin-bottom: 1rem;
 
