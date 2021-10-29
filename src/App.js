@@ -78,10 +78,11 @@ function App() {
   const integrateWallet = () => {
     const init = async () => {
       const { simpleStorage } = await getBlockchain();
-      // const data = await simpleStorage.readData();
       setSimpleStorage(simpleStorage);
       setData(data);
-      setUserWallet(simpleStorage.signer.provider.provider.selectedAddress);
+      simpleStorage.signer
+        ? setUserWallet(simpleStorage.signer.provider.provider.selectedAddress)
+        : alert("Please install Metamask browser extension.");
     };
     init();
   };

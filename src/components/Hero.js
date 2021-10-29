@@ -7,6 +7,9 @@ import "../styles/stars.css";
 
 const HeroBackground = styled.div`
   background: #0b0321;
+  #home {
+    z-index: 99999;
+  }
 `;
 
 const HeroWrapper = styled.div`
@@ -67,7 +70,7 @@ const TextWrapper = styled.div`
 `;
 
 const HeroImageWrapper = styled.div`
-  z-index: 99;
+  z-index: 1;
   position: relative;
   flex: 1;
 

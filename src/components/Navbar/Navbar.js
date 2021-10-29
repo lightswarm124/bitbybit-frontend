@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import NavbarLinks from "./NavbarLinks";
 import Logo from "../_ui/Logo";
 import ContentWrapper from "../ContentWrapper";
 import Button from "../_ui/Button";
@@ -103,10 +102,46 @@ const Hamburger = styled.div`
   }
 `;
 
+const NavItem = styled("a")`
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0 1vw;
+  transition: all 200ms ease-in;
+  position: relative;
+  :after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0%;
+    content: ".";
+    color: transparent;
+    background: #01affb;
+    height: 1px;
+    transition: all 0.4s ease-in;
+  }
+  :hover {
+    color: #01affb;
+    ::after {
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 20px 0;
+    font-size: 1.5rem;
+    z-index: 6;
+  }
+`;
+
 const Navbar = ({ wallet, onClickLogin }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleClick = () => {
     onClickLogin();
+  };
+  const handleNavClick = () => {
+    setNavbarOpen(false);
   };
   const abbreviatedWallet = `${wallet?.slice(0, 2)}...${wallet?.slice(
     wallet.length - 5
@@ -127,11 +162,45 @@ const Navbar = ({ wallet, onClickLogin }) => {
             </Toggle>
             {navbarOpen ? (
               <Navbox>
-                <NavbarLinks />
+                <NavItem onClick={handleNavClick} href="#about">
+                  About
+                </NavItem>
+                <NavItem onClick={handleNavClick} href="#charity">
+                  Charity
+                </NavItem>
+                <NavItem onClick={handleNavClick} href="#roadmap">
+                  Roadmap
+                </NavItem>
+                <NavItem onClick={handleNavClick} href="#tokenomics">
+                  Tokenomics
+                </NavItem>
+                <NavItem onClick={handleNavClick} href="#team">
+                  Team
+                </NavItem>
+                <NavItem onClick={handleNavClick} href="#contact">
+                  Contact
+                </NavItem>
               </Navbox>
             ) : (
               <Navbox open>
-                <NavbarLinks />
+                <NavItem onClick={handleNavClick} href="#about">
+                  About
+                </NavItem>
+                <NavItem onClick={handleNavClick} href="#charity">
+                  Charity
+                </NavItem>
+                <NavItem onClick={handleNavClick} href="#roadmap">
+                  Roadmap
+                </NavItem>
+                <NavItem onClick={handleNavClick} href="#tokenomics">
+                  Tokenomics
+                </NavItem>
+                <NavItem onClick={handleNavClick} href="#team">
+                  Team
+                </NavItem>
+                <NavItem onClick={handleNavClick} href="#contact">
+                  Contact
+                </NavItem>
               </Navbox>
             )}
             {wallet ? (
