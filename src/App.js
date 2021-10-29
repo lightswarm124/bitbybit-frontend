@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import getBlockchain from "./ethereum.js";
 import Navbar from "../src/components/Navbar/Navbar";
 import Hero from "../src/components/Hero";
@@ -10,12 +10,13 @@ import Tokenomics from "./components/Tokenomics.js";
 import Footer from "./components/Footer";
 import Modal from "react-modal";
 import "./styles/stars.css";
+import "./styles/alertClose.css";
 import Button from "./components/_ui/Button";
 import styled from "@emotion/styled";
 import { ethers } from "ethers";
 import Team from "./components/Team.js";
 import Contact from "./components/Contact.js";
-import { Form } from "react-bootstrap";
+import { Form, Alert } from "react-bootstrap";
 
 const pageStyles = {
   margin: 0,
@@ -72,7 +73,8 @@ function App() {
   const [bbbAmount, setBbbAmount] = useState("");
   const [data, setData] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(false);
+  const [show, setShow] = useState(false);
 
   const integrateWallet = () => {
     const init = async () => {
@@ -135,7 +137,9 @@ function App() {
   useEffect(() => {
     if (window.location.search.includes("success=true")) {
       setSuccess(true);
+      setShow(true);
     }
+  }, []);
 
   return (
     <>
@@ -143,10 +147,32 @@ function App() {
         <title>BitByBit</title>
         <Navbar wallet={userWallet} onClickLogin={integrateWallet} />
         {success && (
-          <div className="alert">
-            Thank you for your information. We will reply to your query as soon
-            as possible.
-          </div>
+          <Alert
+            variant="success"
+            show={show}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Button
+              style={{
+                color: "#155724",
+                border: "1px solid #155724",
+                marginRight: "1rem",
+              }}
+              onClick={() => setShow(false)}
+              variant="outline-success"
+            >
+              X
+            </Button>
+            <p style={{ margin: "auto 0" }}>
+              Thank you for your information. We will reply to your message as
+              soon as possible.
+            </p>
+          </Alert>
         )}
         <Hero onClickBuy={openModal} />
         <Features />

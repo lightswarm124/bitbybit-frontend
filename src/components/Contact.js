@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import React, { useEffect, useState } from "react";
 import ContentWrapper from "./ContentWrapper";
 import Button from "../components/_ui/Button";
 import BlockHeading from "./_ui/BlockHeading";
@@ -31,29 +30,19 @@ const Contact = () => {
           method="POST"
           action="https://bitbybit.org/#contact/?success=true"
           data-netlify="true"
+          data-netlify-honeypot="true"
           enctype="application/x-www-form-urlencoded"
         >
           <input type="hidden" name="form-name" value="contact" />
-          <Form.Group
-            className="mb-3"
-            controlId="exampleForm.ControlInput1"
-            id="standard-basic"
-            label="name"
-            name="name"
-          >
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Name</Form.Label>
-            <Form.Control name="name" type="text" />
+            <Form.Control id="standard-basic" name="name" type="text" />
           </Form.Group>
           <br />
-          <Form.Group
-            className="mb-3"
-            controlId="exampleForm.ControlInput1"
-            id="standard-basic"
-            label="email"
-            name="email"
-          >
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Email address</Form.Label>
             <Form.Control
+              id="standard-basic"
               name="email"
               type="email"
               placeholder="name@example.com"
@@ -65,12 +54,14 @@ const Contact = () => {
             className="mb-3"
             controlId="exampleForm.ControlTextarea1"
             multiline
-            id="standard-multiline-static"
-            label="message"
-            name="message"
           >
             <Form.Label>Message</Form.Label>
-            <Form.Control name="message" as="textarea" rows="3" />
+            <Form.Control
+              name="message"
+              as="textarea"
+              id="standard-multiline-static"
+              rows="3"
+            />
           </Form.Group>
           <br />
           <div>
