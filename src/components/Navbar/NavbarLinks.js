@@ -17,12 +17,12 @@ const NavItem = styled("a")`
     width: 0%;
     content: ".";
     color: transparent;
-    background: goldenrod;
+    background: #01affb;
     height: 1px;
     transition: all 0.4s ease-in;
   }
   :hover {
-    color: goldenrod;
+    color: #01affb;
     ::after {
       width: 100%;
     }
