@@ -175,6 +175,7 @@ function App() {
                   onChange={handleChange}
                   type="text"
                   className="form-control"
+                  label="Token Quantity"
                   placeholder="Quantity to purchase"
                 />
               </Form.Group>
