@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import React from "react";
 import BlockHeading from "./_ui/BlockHeading";
 import ContentWrapper from "./ContentWrapper";
-import charityImg from "../images/charity.jpg";
 
 const CharitySection = styled("div")`
   background: #220969;
@@ -61,21 +60,28 @@ const CharityWrapper = styled.div`
   }
 `;
 
-const Charity = () => {
+const Charity = (content) => {
+  content = content.content;
+
   return (
     <CharitySection>
       <ContentWrapper id="charity">
         <BlockHeading title="Charity" />
         <CharityWrapper>
           <div className="charity-text">
-            <p>Currently accepting charity partnership applications.</p>
-            <p>
-              To apply for a partnership fill out our contact form or email
-              <a href="mailto:support@bitbybit.org"> support@bitbybit.org.</a>
-            </p>
+            {content.charityText ? (
+              <div
+                dangerouslySetInnerHTML={{ __html: content.charityText.html }}
+              />
+            ) : (
+              ""
+            )}
           </div>
           <div className="charity-image">
-            <img src={charityImg} alt="Hands holding each other" />
+            <img
+              src={content.charityImage ? content.charityImage.url : ""}
+              alt="Hands holding each other"
+            />
           </div>
         </CharityWrapper>
       </ContentWrapper>
