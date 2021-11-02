@@ -91,14 +91,15 @@ const Contact = () => {
         >
           <input type="hidden" name="form-name" value="contact" />
           <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
-            <Form.Control name="name" type="text" />
+            <Form.Label htmlFor="name">Name</Form.Label>
+            <Form.Control id="name" name="name" type="text" />
           </Form.Group>
           <br />
           <Form.Group className="mb-3">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label htmlFor="email">Email address</Form.Label>
             <Form.Control
               name="email"
+              id="name"
               type="email"
               placeholder="name@example.com"
               required
@@ -106,8 +107,8 @@ const Contact = () => {
           </Form.Group>
           <br />
           <Form.Group className="mb-3" multiline="true">
-            <Form.Label>Message</Form.Label>
-            <Form.Control name="message" as="textarea" rows="3" />
+            <Form.Label htmlFor="message">Message</Form.Label>
+            <Form.Control name="message" id="message" as="textarea" rows="3" />
           </Form.Group>
           <br />
           <div>
