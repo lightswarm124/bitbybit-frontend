@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { request } from "graphql-request";
 import getBlockchain from "./ethereum.js";
 import Navbar from "../src/components/Navbar/Navbar";
 import Hero from "../src/components/Hero";
@@ -73,8 +74,12 @@ function App() {
   const [bnbAmount, setBnbAmount] = useState("");
   const [bbbAmount, setBbbAmount] = useState("");
   const [data, setData] = useState("");
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [aboutContent, setAboutContent] = useState([]);
 
+  // CMS content
+
+  // Metamask wallet integration
   const integrateWallet = () => {
     const init = async () => {
       const { simpleStorage } = await getBlockchain();
@@ -92,6 +97,7 @@ function App() {
     run();
   };
 
+  // Buy BBB tokens
   const purchaseTokens = async (e) => {
     e.preventDefault();
     if (userWallet) {
@@ -139,6 +145,30 @@ function App() {
     const bnbTokens = event.target.value * 0.000021;
     setBnbAmount(bnbTokens);
   }
+
+  // Get CMS content
+  useEffect(() => {
+    const fetchContent = async () => {
+      const about = await request(
+        "https://api-us-east-1.graphcms.com/v2/ckvikxxl14rx301z0dotp3kvp/master",
+        `
+      {
+        abouts {
+          aboutImage {
+            url
+          }
+          firstParagraph
+          secondParagraph
+        }
+      }
+    `
+      );
+      setAboutContent(about.abouts[0]);
+    };
+
+    fetchContent();
+  }, []);
+
   return (
     <>
       <main id="main" style={pageStyles}>
@@ -146,7 +176,7 @@ function App() {
         <Navbar wallet={userWallet} onClickLogin={integrateWallet} />
         <Hero onClickBuy={openModal} />
         <Features />
-        <About />
+        <About content={aboutContent} />
         <Charity />
         <Roadmap />
         <Tokenomics />

@@ -34,33 +34,23 @@ const AboutWrapper = styled.div`
   }
 `;
 
-const About = () => {
+const About = (content) => {
+  content = content.content;
+  // console.log(content.aboutImage.url);
   return (
     <AboutSection>
       <ContentWrapper id="about">
         <BlockHeading title="How it works" />
         <AboutWrapper>
           <div className="about-text">
-            <p>
-              Bitbybit is a proof-of-stake cryptocurrency that donates 75% of
-              its liquidation to charity. It is one of the first non-profit
-              organizations that accepts donations through blockchain
-              technology; allowing individuals to invest and donate
-              simultaneously. Donations are held within the donor’s crypto
-              wallet until they decide to sell their tokens. Once sold, the
-              tokens are sent to the charity’s crypto wallet. Charitable
-              organizations are contracted quarterly for use of this technology.
-            </p>
+            <p>{content.firstParagraph}</p>
             <div className="image-wrapper">
-              <img src={blocksIllustration} alt="people sitting on blocks" />
+              <img
+                src={content.aboutImage ? content.aboutImage.url : ""}
+                alt="people sitting on blocks"
+              />
             </div>
-            <p>
-              With a strong team of developers, Bitbybit is dedicated to
-              providing awareness and funding for charitable organizations. This
-              will be achieved by utilizing enhanced public interest and
-              innovative financing mechanisms. Our goal is to provide charitable
-              organizations across the world access to blockchain technology.
-            </p>
+            <p>{content.secondParagraph}</p>
           </div>
         </AboutWrapper>
       </ContentWrapper>
