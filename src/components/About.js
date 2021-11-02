@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import React from "react";
 import BlockHeading from "./_ui/BlockHeading";
 import ContentWrapper from "./ContentWrapper";
-import blocksIllustration from "../images/blocks-illustration.png";
 
 const AboutSection = styled("div")`
   z-index: 9999;
@@ -36,7 +35,7 @@ const AboutWrapper = styled.div`
 
 const About = (content) => {
   content = content.content;
-  // console.log(content.aboutImage.url);
+
   return (
     <AboutSection>
       <ContentWrapper id="about">

@@ -75,9 +75,14 @@ function App() {
   const [bbbAmount, setBbbAmount] = useState("");
   const [data, setData] = useState("");
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [aboutContent, setAboutContent] = useState([]);
 
-  // CMS content
+  // CMS Content
+  const [heroHeadlineContent, setHeroHeadlineContent] = useState([]);
+  const [featuresContent, setFeaturesContent] = useState([]);
+  const [aboutContent, setAboutContent] = useState([]);
+  const [charityContent, setCharityContent] = useState([]);
+  const [roadmapContent, setRoadmapContent] = useState([]);
+  const [teamContent, setTeamContent] = useState([]);
 
   // Metamask wallet integration
   const integrateWallet = () => {
@@ -152,7 +157,7 @@ function App() {
       const about = await request(
         "https://api-us-east-1.graphcms.com/v2/ckvikxxl14rx301z0dotp3kvp/master",
         `
-      {
+        {
         abouts {
           aboutImage {
             url
@@ -160,10 +165,48 @@ function App() {
           firstParagraph
           secondParagraph
         }
+        charities {
+          charityText {
+            html
+          }
+          charityImage {
+            url
+          }
+        }
+        features {
+          headline
+          icon {
+            url
+          }
+          subheading
+        }
+        heroHeadlines {
+          subheader
+        }
+        roadmaps {
+          lastPhaseCompleted
+          phase1
+          phase2
+          phase3
+          phase4
+          phase5
+        }
+        teams {
+          teamMemberName
+          teamMemberTitle
+          teamImage {
+            url
+          }
+        }
       }
     `
       );
+      setHeroHeadlineContent(about.heroHeadlines[0]);
+      setFeaturesContent(about.features);
       setAboutContent(about.abouts[0]);
+      setCharityContent(about.charities[0]);
+      setRoadmapContent(about.roadmaps[0]);
+      setTeamContent(about.teams);
     };
 
     fetchContent();
@@ -174,13 +217,13 @@ function App() {
       <main id="main" style={pageStyles}>
         <title>Bitbybit</title>
         <Navbar wallet={userWallet} onClickLogin={integrateWallet} />
-        <Hero onClickBuy={openModal} />
-        <Features />
+        <Hero onClickBuy={openModal} content={heroHeadlineContent} />
+        <Features content={featuresContent} />
         <About content={aboutContent} />
-        <Charity />
-        <Roadmap />
+        <Charity content={charityContent} />
+        <Roadmap content={roadmapContent} />
         <Tokenomics />
-        <Team />
+        <Team content={teamContent} />
         <Contact />
         <Footer />
         <Modal
