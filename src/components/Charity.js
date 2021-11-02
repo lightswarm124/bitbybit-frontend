@@ -30,6 +30,10 @@ const CharityWrapper = styled.div`
     margin-left: 3rem;
     padding-right: 3rem;
 
+    a {
+      color: #bddcfe;
+    }
+
     @media (max-width: 768px) {
       margin-left: 0;
       padding-right: 0;

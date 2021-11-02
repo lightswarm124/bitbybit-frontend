@@ -99,7 +99,7 @@ const Contact = () => {
             <Form.Label htmlFor="email">Email address</Form.Label>
             <Form.Control
               name="email"
-              id="name"
+              id="email"
               type="email"
               placeholder="name@example.com"
               required
