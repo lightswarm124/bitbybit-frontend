@@ -34,13 +34,12 @@ const ContactSection = styled.div`
 `;
 
 const Contact = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let myForm = document.getElementById("contactForm");
     let formData = new FormData(myForm);
-    console.log(formData);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
