@@ -34,7 +34,7 @@ const ContactSection = styled.div`
 `;
 
 const Contact = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,6 +52,7 @@ const Contact = () => {
   return (
     <ContactSection>
       <ContentWrapper id="contact">
+        <BlockHeading title="Contact Us" />
         {show && (
           <Alert
             variant="success"
@@ -80,7 +81,6 @@ const Contact = () => {
             </p>
           </Alert>
         )}
-        <BlockHeading title="Contact Us" />
         <Form
           id="contactForm"
           name="contact"
