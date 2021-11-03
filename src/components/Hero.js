@@ -80,10 +80,11 @@ const HeroImageWrapper = styled.div`
   }
 `;
 
-const Hero = ({ onClickBuy }) => {
+const Hero = ({ onClickBuy, content }) => {
   const handleClick = () => {
     onClickBuy();
   };
+
   return (
     <HeroBackground>
       <div id="stars3" />
@@ -98,7 +99,7 @@ const Hero = ({ onClickBuy }) => {
               <span> by </span>
               bit
             </h1>
-            <h2>Invest and donate to charity simultaneously.</h2>
+            <h2>{content.subheader}</h2>
             <div className="buttons-wrapper">
               <Button variant="primary" onClick={handleClick}>
                 Buy now

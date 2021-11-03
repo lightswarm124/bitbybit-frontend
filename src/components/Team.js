@@ -2,8 +2,6 @@ import styled from "@emotion/styled";
 import React from "react";
 import ContentWrapper from "./ContentWrapper";
 import BlockHeading from "./_ui/BlockHeading";
-import Tony from "../images/anthony-ippolito.png";
-import Jonas from "../images/matthew-jonas.png";
 
 const TeamSection = styled.div`
   background: white;
@@ -50,26 +48,25 @@ const TeamSection = styled.div`
   }
 `;
 
-const Team = () => {
+const Team = (content) => {
+  content = content.content;
   return (
     <TeamSection>
       <ContentWrapper id="team">
         <BlockHeading title="Meet Our Team" />
         <div className="people">
-          <div className="person">
-            <div className="headshot">
-              <img src={Tony} alt="Headshot of Anthony Ippolito" />
+          {content.map((person) => (
+            <div className="person">
+              <div className="headshot">
+                <img
+                  src={person.teamImage ? person.teamImage.url : ""}
+                  alt={person.teamMemberName + " headshot"}
+                />
+              </div>
+              <h4>{person.teamMemberName}</h4>
+              <p>{person.teamMemberTitle}</p>
             </div>
-            <h4>Anthony Ippolito</h4>
-            <p>Chief Executive Officer</p>
-          </div>
-          <div className="person">
-            <div className="headshot">
-              <img src={Jonas} alt="Headshot of Matthew Jonas" />
-            </div>
-            <h4>Matthew Jonas</h4>
-            <p>Project Manager</p>
-          </div>
+          ))}
         </div>
       </ContentWrapper>
     </TeamSection>
