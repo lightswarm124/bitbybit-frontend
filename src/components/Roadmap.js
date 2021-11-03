@@ -19,7 +19,14 @@ const RoadmapWrapper = styled.div`
   }
 `;
 
-const Roadmap = () => {
+const Roadmap = (content) => {
+  content = content.content;
+
+  // Check roadmap progress against each phase
+  const completed = function (phaseNumber) {
+    return phaseNumber <= content.lastPhaseCompleted;
+  };
+
   return (
     <RoadmapWrapper>
       <ContentWrapper id="roadmap">
@@ -27,54 +34,52 @@ const Roadmap = () => {
         <VerticalTimeline lineColor="#FF2498">
           <VerticalTimelineElement
             contentStyle={{ color: "black" }}
-            iconStyle={{ background: "#FF2498", color: "#fff" }}
+            iconStyle={{ background: completed(1) ? "#FF2498" : "white" }}
             icon={<img src={Checkmark} alt="" />}
           >
             <h3 className="vertical-timeline-element-title">Phase 1</h3>
             <ul>
-              <li>Website Creation</li>
-              <li>Charity Partnership</li>
-              <li>Smart Contract Creation</li>
+              {content.phase1 && content.phase1.map((item) => <li>{item}</li>)}
             </ul>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            iconStyle={{ background: "white" }}
+            iconStyle={{ background: completed(2) ? "#FF2498" : "white" }}
             contentStyle={{ color: "black" }}
+            icon={<img src={Checkmark} alt="" />}
           >
             <h3 className="vertical-timeline-element-title">Phase 2</h3>
             <ul>
-              <li>ICO Launch</li>
-              <li>Marketing Push</li>
+              {content.phase2 && content.phase2.map((item) => <li>{item}</li>)}
             </ul>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            iconStyle={{ background: "white" }}
+            iconStyle={{ background: completed(3) ? "#FF2498" : "white" }}
             contentStyle={{ color: "black" }}
+            icon={<img src={Checkmark} alt="" />}
           >
             <h3 className="vertical-timeline-element-title">Phase 3</h3>
             <ul>
-              <li>Liquidity Pool Implementation</li>
-              <li>CoinGecko Listing</li>
-              <li>CoinMarketCap Listing</li>
+              {content.phase3 && content.phase3.map((item) => <li>{item}</li>)}
             </ul>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            iconStyle={{ background: "white" }}
+            iconStyle={{ background: completed(4) ? "#FF2498" : "white" }}
             contentStyle={{ color: "black" }}
+            icon={<img src={Checkmark} alt="" />}
           >
             <h3 className="vertical-timeline-element-title">Phase 4</h3>
             <ul>
-              <li>Smart Contract Audit</li>
-              <li>Team Expansion</li>
+              {content.phase4 && content.phase4.map((item) => <li>{item}</li>)}
             </ul>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            iconStyle={{ background: "white" }}
+            iconStyle={{ background: completed(5) ? "#FF2498" : "white" }}
             contentStyle={{ color: "black" }}
+            icon={<img src={Checkmark} alt="" />}
           >
             <h3 className="vertical-timeline-element-title">Phase 5</h3>
             <ul>
-              <li>App Development</li>
+              {content.phase5 && content.phase5.map((item) => <li>{item}</li>)}
             </ul>
           </VerticalTimelineElement>
         </VerticalTimeline>
