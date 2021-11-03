@@ -106,10 +106,11 @@ const Hero = ({ onClickBuy, content }) => {
               </Button>
               <a href="#about">
                 <Button
-                  onClick="location.href='https://bitbybit.org/#about';"
+                  href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain"
                   variant="secondary"
+                  target="_blank"
                 >
-                  Learn more
+                  Setup help
                 </Button>
               </a>
             </div>
