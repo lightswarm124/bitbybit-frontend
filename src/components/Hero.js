@@ -107,6 +107,7 @@ const Hero = ({ onClickBuy, content }) => {
               <a href="#about">
                 <Button
                   href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain"
+                  rel="noreferrer"
                   variant="secondary"
                   target="_blank"
                 >
