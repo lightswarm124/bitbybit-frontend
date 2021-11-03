@@ -84,6 +84,67 @@ function App() {
   const [roadmapContent, setRoadmapContent] = useState([]);
   const [teamContent, setTeamContent] = useState([]);
 
+  // Get CMS content
+  useEffect(() => {
+    const fetchContent = async () => {
+      const about = await request(
+        "https://api-us-east-1.graphcms.com/v2/ckvikxxl14rx301z0dotp3kvp/master",
+        `
+          {
+          abouts {
+            aboutImage {
+              url
+            }
+            firstParagraph
+            secondParagraph
+          }
+          charities {
+            charityText {
+              html
+            }
+            charityImage {
+              url
+            }
+          }
+          features {
+            headline
+            icon {
+              url
+            }
+            subheading
+          }
+          heroHeadlines {
+            subheader
+          }
+          roadmaps {
+            lastPhaseCompleted
+            phase1
+            phase2
+            phase3
+            phase4
+            phase5
+          }
+          teams {
+            teamMemberName
+            teamMemberTitle
+            teamImage {
+              url
+            }
+          }
+        }
+      `
+      );
+      setHeroHeadlineContent(about.heroHeadlines[0]);
+      setFeaturesContent(about.features);
+      setAboutContent(about.abouts[0]);
+      setCharityContent(about.charities[0]);
+      setRoadmapContent(about.roadmaps[0]);
+      setTeamContent(about.teams);
+    };
+
+    fetchContent();
+  }, []);
+
   // Metamask wallet integration
   const integrateWallet = () => {
     const init = async () => {
@@ -151,67 +212,6 @@ function App() {
     setBnbAmount(bnbTokens);
   }
 
-  // Get CMS content
-  useEffect(() => {
-    const fetchContent = async () => {
-      const about = await request(
-        "https://api-us-east-1.graphcms.com/v2/ckvikxxl14rx301z0dotp3kvp/master",
-        `
-        {
-        abouts {
-          aboutImage {
-            url
-          }
-          firstParagraph
-          secondParagraph
-        }
-        charities {
-          charityText {
-            html
-          }
-          charityImage {
-            url
-          }
-        }
-        features {
-          headline
-          icon {
-            url
-          }
-          subheading
-        }
-        heroHeadlines {
-          subheader
-        }
-        roadmaps {
-          lastPhaseCompleted
-          phase1
-          phase2
-          phase3
-          phase4
-          phase5
-        }
-        teams {
-          teamMemberName
-          teamMemberTitle
-          teamImage {
-            url
-          }
-        }
-      }
-    `
-      );
-      setHeroHeadlineContent(about.heroHeadlines[0]);
-      setFeaturesContent(about.features);
-      setAboutContent(about.abouts[0]);
-      setCharityContent(about.charities[0]);
-      setRoadmapContent(about.roadmaps[0]);
-      setTeamContent(about.teams);
-    };
-
-    fetchContent();
-  }, []);
-
   return (
     <>
       <main id="main" style={pageStyles}>
@@ -265,7 +265,7 @@ function App() {
               >
                 Purchase
               </Button>
-              <Button type="submit" onClick={closeModal} variant="secondary">
+              <Button onClick={closeModal} variant="secondary">
                 Cancel
               </Button>
             </Form>
