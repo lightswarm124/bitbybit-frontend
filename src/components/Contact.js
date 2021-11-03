@@ -112,7 +112,7 @@ const Contact = () => {
           </Form.Group>
           <br />
           <div>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" href="#">
               Send
             </Button>
           </div>
