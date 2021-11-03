@@ -4,6 +4,7 @@ This is the frontend for the cryptocurrency BitByBit's website. This web applica
 * React.js
 * Ethers.js
 * Emotion 
+* GraphCMS
 
 ## Getting Started
 Follow these instructions to get the project up and running locally.
