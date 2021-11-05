@@ -34,52 +34,14 @@ const TokenomicsSection = styled.div`
   }
 `;
 
-const tokenomicsData = [
-  {
-    title: "Token Name",
-    data: "Bitbybit",
-  },
-  {
-    title: "Network",
-    data: "Binance Smart Chain",
-  },
-  {
-    title: "Token Symbol",
-    data: "BBB",
-  },
-  {
-    title: "ICO Price",
-    data: "0.000021 BNB",
-  },
-  {
-    title: "Soft Cap",
-    data: "20,000,000",
-  },
-  {
-    title: "Hard Cap",
-    data: "TBD",
-  },
-  {
-    title: "Total Supply",
-    data: "800,000,00",
-  },
-  {
-    title: "Crowd Sale Refundable",
-    data: "Yes",
-  },
-  {
-    title: "",
-    data: "",
-  },
-];
-
-const Tokenomics = () => {
+const Tokenomics = (content) => {
+  content = content.content;
   return (
     <TokenomicsSection>
       <ContentWrapper id="tokenomics">
         <BlockHeading title="Tokenomics" />
         <div className="tokenomics-items">
-          {tokenomicsData.map((item) => (
+          {content.map((item) => (
             <div key={item.title} className="item">
               <h4>{item.title}</h4>
               <p>{item.data}</p>

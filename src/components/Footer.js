@@ -60,6 +60,17 @@ const FooterWrapper = styled.div`
     }
   }
 
+  .social {
+    display: flex;
+
+    .icon {
+      margin-left: 1rem;
+      img {
+        max-width: 25px;
+      }
+    }
+  }
+
   .copyright {
     margin: 0 auto;
     display: flex;
@@ -72,7 +83,9 @@ const FooterWrapper = styled.div`
   }
 `;
 
-const Footer = () => {
+const Footer = (content) => {
+  content = content.content;
+  console.log(content);
   return (
     <FooterWrapper>
       <ContentWrapper className="content">
@@ -93,7 +106,19 @@ const Footer = () => {
           <a href="#contact">Contact</a>
           <a href="#contact">Whitepaper</a>
         </div>
-        <div className="social"></div>
+        <div className="social">
+          {content.map((item) => {
+            return (
+              <div className="icon">
+                {item.icon && item.url ? (
+                  <a href={item.url}>
+                    <img src={item.icon.url} alt="" />
+                  </a>
+                ) : null}
+              </div>
+            );
+          })}
+        </div>
       </ContentWrapper>
       <span className="copyright">© 2021 BitByBit</span>
     </FooterWrapper>

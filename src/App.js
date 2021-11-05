@@ -108,6 +108,8 @@ function App() {
   const [charityContent, setCharityContent] = useState([]);
   const [roadmapContent, setRoadmapContent] = useState([]);
   const [teamContent, setTeamContent] = useState([]);
+  const [tokenomicsContent, setTokenomicsContent] = useState([]);
+  const [socialContent, setSocialContent] = useState([]);
 
   // Get CMS content
   useEffect(() => {
@@ -149,12 +151,23 @@ function App() {
             phase4
             phase5
           }
+          socialMedias {
+            platformName
+            url
+            icon {
+              url
+            }
+          }
           teams {
             teamMemberName
             teamMemberTitle
             teamImage {
               url
             }
+          }
+          tokenomics {
+            title
+            data
           }
         }
       `
@@ -165,6 +178,8 @@ function App() {
       setCharityContent(about.charities[0]);
       setRoadmapContent(about.roadmaps[0]);
       setTeamContent(about.teams);
+      setTokenomicsContent(about.tokenomics);
+      setSocialContent(about.socialMedias);
     };
 
     fetchContent();
@@ -247,10 +262,10 @@ function App() {
         <About content={aboutContent} />
         <Charity content={charityContent} />
         <Roadmap content={roadmapContent} />
-        <Tokenomics />
+        <Tokenomics content={tokenomicsContent} />
         <Team content={teamContent} />
         <Contact />
-        <Footer />
+        <Footer content={socialContent} />
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
