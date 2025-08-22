@@ -4,6 +4,7 @@ import ContentWrapper from "./ContentWrapper";
 import Button from "../components/_ui/Button";
 import "../styles/globe.css";
 import "../styles/stars.css";
+import Logo from "./_ui/Logo";
 
 const HeroBackground = styled.div`
   background: #0b0321;
@@ -114,6 +115,7 @@ const Hero = ({ onClickBuy, content }) => {
                   Setup help
                 </Button>
               </a>
+              <Logo />
             </div>
           </TextWrapper>
           <HeroImageWrapper>
